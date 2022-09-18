@@ -489,10 +489,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q1] The security concern(s) with _InSecureumLand_ is/are**
 
-(A): Single-step ownership change
-(B): Incorrectly implemented KYC check using Merkle proofs
-(C): Missing time-delayed change of critical parameters
-(D): Accidentally sent Ether gets locked in contract
+(A): Single-step ownership change  
+(B): Incorrectly implemented KYC check using Merkle proofs  
+(C): Missing time-delayed change of critical parameters  
+(D): Accidentally sent Ether gets locked in contract  
 
 **[Answers]: A, C**
 
@@ -500,10 +500,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q2] The security concern(s) with _InSecureumLand_ _setOperator()_ is/are**
 
-(A): Missing zero-address validation
-(B): Missing event emission
-(C): Incorrect modifier
-(D): None of the above
+(A): Missing zero-address validation  
+(B): Missing event emission  
+(C): Incorrect modifier  
+(D): None of the above  
 
 **[Answers]: A, B**
 
@@ -511,10 +511,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q3] The security concern(s) with _InSecureumLand_ _mintLands()_ is/are**
 
-(A): Minting could exceed max supply
-(B): Minting could exceed `maxMintPerTx`
-(C): Minting could exceed `maxMintPerAddress`
-(D): None of the above
+(A): Minting could exceed max supply  
+(B): Minting could exceed `maxMintPerTx`  
+(C): Minting could exceed `maxMintPerAddress`  
+(D): None of the above  
 
 **[Answers]: A**
 
@@ -522,10 +522,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q4] Missing threshold check(s) on parameter(s) is/are a concern in**
 
-(A): `mintLands`
-(B): `startPublicSale`
-(C): `contributorsClaimLand`
-(D): None of the above
+(A): `mintLands`  
+(B): `startPublicSale`  
+(C): `contributorsClaimLand`  
+(D): None of the above  
 
 **[Answers]: B, C**
 
@@ -533,10 +533,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q5] The security concern(s) with _InSecureumLand_ contributors claim functions is/are**
 
-(A): Anyone can call `startContributorsClaimPeriod`
-(B): Anyone can call `stopContributorsClaimPeriod`
-(C): Anyone can call `contributorsClaimLand`
-(D): None of the above
+(A): Anyone can call `startContributorsClaimPeriod`  
+(B): Anyone can call `stopContributorsClaimPeriod`  
+(C): Anyone can call `contributorsClaimLand`  
+(D): None of the above  
 
 **[Answers]: C**
 
@@ -544,10 +544,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q6] The security concern(s) with _InSecureumLand_ random number usage is/are**
 
-(A): It depends on miner-influenceable `block.timestamp`
-(B): It depends on miner-influenceable blockhash
-(C): It depends on deprecated Chainlink VRF v1
-(D): None of the above
+(A): It depends on miner-influenceable `block.timestamp`  
+(B): It depends on miner-influenceable blockhash  
+(C): It depends on deprecated Chainlink VRF v1  
+(D): None of the above  
 
 **[Answers]: C**
 
@@ -555,10 +555,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q7] The documentation/readability concern(s) with _InSecureumLand_ is/are**
 
-(A): Stale comments
-(B): Missing NatSpec
-(C): Minimal inlined comments
-(D): None of the above
+(A): Stale comments  
+(B): Missing NatSpec  
+(C): Minimal inlined comments  
+(D): None of the above  
 
 **[Answers]: B, C**
 
@@ -566,10 +566,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 **[Q8] Potential gas optimization(s) (after appropriate security considerations) in _InSecureumLand_ is/are**
 
-(A): Removing `nonReentrant` modifier if mint addresses are known to be EOA
-(B): Using `_mint` instead of `_safeMint` if mint addresses are known to be EOA
-(C): Using unchecked in for loop increments
-(D): None of the above
+(A): Removing `nonReentrant` modifier if mint addresses are known to be EOA  
+(B): Using `_mint` instead of `_safeMint` if mint addresses are known to be EOA  
+(C): Using unchecked in for loop increments  
+(D): None of the above  
 
 **[Answers]: A, B, C**
 
