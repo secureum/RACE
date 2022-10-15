@@ -1,4 +1,4 @@
-**Note**: All 8 questions in this RACE are based on the InSecureumApe contract. This is the same contract you will see for all the 8 questions in this RACE. InSecureumLand is adapted from a well-known contract. The question is below the shown contract.
+**Note**: All 8 questions in this RACE are based on the _InSecureumApe_ contract. This is the same contract you will see for all the 8 questions in this RACE. _InSecureumApe_ is adapted from a well-known contract. The question is below the shown contract.
 
 ```
 pragma solidity ^0.7.0;
@@ -156,7 +156,7 @@ contract InSecureumApe is ERC721, Ownable {
 
 (A): Use of a floating pragma and an older compiler version  
 (B): Oracle price manipulation  
-(C): Reentrancy allowing bypass of maxApePurchase check  
+(C): Reentrancy allowing bypass of `maxApePurchase` check  
 (D): None of the above  
 
 **[Answers]: A, C**
