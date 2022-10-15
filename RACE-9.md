@@ -101,7 +101,7 @@ contract Proxy is Ownable {
 
 ---
 
-**[Q5] Calling the decrease() function on the Proxy contract**
+**[Q5] Calling the `decrease()` function on the Proxy contract**
 
 (A): Will revert because it was not correctly registered on the proxy  
 (B): Will succeed and return the value of counter after it was decreased  
@@ -114,9 +114,9 @@ contract Proxy is Ownable {
 
 **[Q6] Due to a storage clash between the Proxy and the Mastercopy contracts**
 
-(A): Proxy's implementations would be overwritten by 0 during initialization of the Mastercopy  
-(B): Proxy's implementations would be overwritten when the counter variable changes  
-(C): Proxy's implementations variable's storage slot being overwritten causes a DoS  
+(A): Proxy's `implementations` would be overwritten by 0 during initialization of the Mastercopy  
+(B): Proxy's `implementations` would be overwritten when the counter variable changes  
+(C): Proxy's `implementations` variable's storage slot being overwritten causes a DoS  
 (D): None of the above  
 
 **[Answers]: D**
