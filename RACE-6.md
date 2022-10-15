@@ -545,7 +545,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 **[Q6] The security concern(s) with _InSecureumLand_ random number usage is/are**
 
 (A): It depends on miner-influenceable `block.timestamp`  
-(B): It depends on miner-influenceable blockhash  
+(B): It depends on miner-influenceable `blockhash`  
 (C): It depends on deprecated Chainlink VRF v1  
 (D): None of the above  
 
@@ -568,7 +568,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 
 (A): Removing `nonReentrant` modifier if mint addresses are known to be EOA  
 (B): Using `_mint` instead of `_safeMint` if mint addresses are known to be EOA  
-(C): Using unchecked in for loop increments  
+(C): Using `unchecked` in for loop increments  
 (D): None of the above  
 
 **[Answers]: A, B, C**
