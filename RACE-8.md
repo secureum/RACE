@@ -1,4 +1,4 @@
-**Note**: All 8 questions in this RACE are based on the InSecureumERC721 contract. This is the same contract you will see for all the 8 questions in this RACE. InSecureumERC721 is adapted from a well-known contract. The question is below the shown contract.
+**Note**: All 8 questions in this RACE are based on the _InSecureumERC721_ contract. This is the same contract you will see for all the 8 questions in this RACE. _InSecureumERC721_ is adapted from a well-known contract. The question is below the shown contract.
 
 ```
 pragma solidity >=0.8.0;
