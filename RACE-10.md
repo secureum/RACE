@@ -98,7 +98,7 @@ contract TestContract is Ownable {
 
 ---
 
-**[Q1] Which statements are true in Test1()?**
+**[Q1] Which statements are true in `Test1()`?**
 
 (A): The function does not use all supplied extra data    
 (B): The function can revert due to an underflow    
@@ -109,7 +109,7 @@ contract TestContract is Ownable {
 
 ---
 
-**[Q2] Which statements are true in Test2()?**
+**[Q2] Which statements are true in `Test2()`?**
 
 (A): Result of `encodePacked` is deterministic    
 (B): `abi.decode` always succeeds    
@@ -120,7 +120,7 @@ contract TestContract is Ownable {
 
 ---
 
-**[Q3] Which statements are true in NextBookNonce()?**
+**[Q3] Which statements are true in `NextBookNonce()`?**
 
 (A): `wrap` and `unwrap` cost additional gas    
 (B): It is safe to use `unchecked`    
@@ -131,10 +131,10 @@ contract TestContract is Ownable {
 
 ---
 
-**[Q4] Which statements are true in Test3()?**
+**[Q4] Which statements are true in `Test3()`?**
 
 (A): ``bookIndex.nonce`` is incremented in the loop    
-(B): ``bookIndex.nonce`` cannot be incremented because `NextBookNonce` is `pure    
+(B): ``bookIndex.nonce`` cannot be incremented because `NextBookNonce` is `pure`    
 (C): ``i++`` can be made `unchecked`    
 (D): ``memory`` can be changed to `storage` without any other changes    
 
@@ -142,7 +142,7 @@ contract TestContract is Ownable {
 
 ---
 
-**[Q5] Which statements are true In Test4()?**
+**[Q5] Which statements are true In `Test4()`?**
 
 (A): The function always reverts with ``ZeroAddress()``    
 (B): The function always reverts with ``ZeroAmount()``    
@@ -153,7 +153,7 @@ contract TestContract is Ownable {
 
 ---
 
-**[Q6] Which statements are true in Test5()?**
+**[Q6] Which statements are true in `Test5()`?**
 
 (A): modifier ``checkInvariants`` will pause the contract if too much is minted    
 (B): modifier ``checkInvariants`` will never pause the contract    
@@ -175,7 +175,7 @@ contract TestContract is Ownable {
 
 ---
 
-**[Q8] Which statements are true In Test5() and related functions?**
+**[Q8] Which statements are true In `Test5()` and related functions?**
 
 (A): ``pause`` is unsafe    
 (B): ``unpause`` is unsafe    
