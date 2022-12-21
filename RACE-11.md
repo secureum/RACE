@@ -86,88 +86,89 @@ contract Staking {
 
 **[Q1] Which statements are true in `withdraw()`?**
 
-(A) Can be successfully executed when contract is paused
-(B) User can withdraw only after `_minDepositLockTime` elapsed since last withdrawal
-(C) Follows checks-effects-interaction pattern best practice
-(D) User can withdraw more than deposited  
-
-**[Answers]: B, D**
+(A) Can be successfully executed when contract is paused       
+(B) User can withdraw only after `_minDepositLockTime` elapsed since last withdrawal    
+(C) Follows checks-effects-interaction pattern best practice    
+(D) User can withdraw more than deposited      
+    
+**[Answers]: D**    
 
 ---
 
 **[Q2] Which mitigations are applicable to `withdraw()`?**
 
-(A): Transferred amount should be minimum of `amount` and `_userBalances[msg.sender]`
-(B): Move if/else block before `safeTransferFrom`
-(C): Require `amount` to be <= user’s balance deposited earlier
-(D): Remove if/else block and add `_userBalances[msg.sender] -= amount` before `safeTransferFrom` 
-
-**[Answers]: A, C, D**
-
----
-
-**[Q3] The security concern(s) in `pause()` is/are:**
-
-(A): Does not emit an event
-(B): Access control is not strict enough
-(C): Will always revert
-(D): None of the above
-
-**[Answers]: A**
+(A): Transferred amount should be minimum of `amount` and `_userBalances[msg.sender]`    
+(B): Move if/else block before `safeTransferFrom`    
+(C): Require `amount` to be <= user’s balance deposited earlier    
+(D): Remove if/else block and add `_userBalances[msg.sender] -= amount` before `safeTransferFrom`    
+    
+**[Answers]: A, C, D**    
 
 ---
 
-**[Q4] Which statement(s) is/are true for `unpause()`?**
-
-(A): Will unpause deposits and withdrawals
-(B): Will unpause withdrawals only
-(C): Anyone can successfully call the function
-(D): None of the above
-
-**[Answers]: B, C**
-
+**[Q3] The security concern(s) in `pause()` is/are:**    
+    
+(A): Does not emit an event    
+(B): Access control is not strict enough    
+(C): Will always revert    
+(D): None of the above    
+    
+**[Answers]: A**    
+    
 ---
 
-**[Q5] Which statement(s) is/are true in `depositFor()`?**
-
-(A): Can be executed when contract is paused
-(B): Allows a user to deposit for another user
-(C): Allows a user to fund the deposit for another user
-(D): None of the above   
-
-**[Answers]: A, B**
-
+**[Q4] Which statement(s) is/are true for `unpause()`?**    
+    
+(A): Will unpause deposits and withdrawals    
+(B): Will unpause withdrawals only    
+(C): Anyone can successfully call the function    
+(D): None of the above    
+    
+**[Answers]: B, C**    
+    
 ---
 
-**[Q6] The issue(s) in `depositFor()` is/are:**
+**[Q5] Which statement(s) is/are true in `depositFor()`?**    
 
-(A): Cannot be paused for emergency
-(B): Exploitable re-entrancy attack
-(C): User withdrawals can be delayed indefinitely via DoS attack
-(D): None of the above
+(A): Can be executed when contract is paused    
+(B): Allows a user to deposit for another user    
+(C): Allows a user to fund the deposit for another user    
+(D): None of the above    
+    
+**[Answers]: A, B**    
+    
+---
+    
+**[Q6] The issue(s) in `depositFor()` is/are:**    
 
-**[Answers]: A, C**
-
+(A): Cannot be paused for emergency    
+(B): Exploitable re-entrancy attack    
+(C): User withdrawals can be delayed indefinitely via DoS attack    
+(D): None of the above    
+    
+**[Answers]: A, C**    
+    
+---
+    
+**[Q7] Which of the following statement(s) is/are true?**    
+    
+(A): `Withdraw` event is emitted with incorrect amount    
+(B): `Withdraw` event is emitted with correct user    
+(C): `Deposit` event is always emitted incorrectly    
+(D): `Deposit` event is emitted with incorrect user    
+    
+**[Answers]: B, D**    
+    
 ---
 
-**[Q7] Which of the following statement(s) is/are true?**
-
-(A): `Withdraw` event is emitted with incorrect amount
-(B): `Withdraw` event is emitted with correct user
-(C): `Deposit` event is always emitted incorrectly
-(D): `Deposit` event is emitted with incorrect user
-
-**[Answers]: B, D**
-
+**[Q8] Potential gas optimization(s) is/are:**    
+    
+(A): Use `immutable` for all variables assigned in constructor    
+(B): Use `immutable` for `_token`, `_operator` and `_minDepositLockTime`    
+(C): Use `unchecked`    
+(D): None of the above    
+    
+**[Answers]: B, C**    
+    
 ---
-
-**[Q8] Potential gas optimization(s) is/are:**
-
-(A): Use `immutable` for all variables assigned in constructor
-(B): Use `immutable` for `_token`, `_operator` and `_minDepositLockTime`
-(C): Use `unchecked`
-(D): None of the above
-
-**[Answers]: B, C**
-
----
+    
