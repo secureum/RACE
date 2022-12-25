@@ -1,4 +1,4 @@
-**Note**: All 8 questions in this RACE are based on the below contract. This is the same contract you will see for all the 8 questions in this RACE. The question is below the shown contracts.
+**Note**: All 8 questions in this RACE are based on the below contracts. This is the same contracts you will see for all the 8 questions in this RACE. The question is below the shown contracts.
 
 ```solidity
 // SPDX-License-Identifier: GPL-3.0
@@ -97,7 +97,7 @@ contract PermitModule is TokenV1, ERC20Permit {
 
 ---
 
-**[Q1] Sensible gas optimization(s) would be?**    
+**[Q1] Sensible gas optimization(s) would be**    
 
 (A) Making `MIGRATOR_ROLE` state variable constant    
 (B) Making `UNDERLYING` state variable constant    
@@ -141,7 +141,7 @@ contract PermitModule is TokenV1, ERC20Permit {
     
 ---
 
-**[Q5] Who would need the `MIGRATOR_ROLE` for TokenV2 to function as intended??**    
+**[Q5] Who would need the `MIGRATOR_ROLE` for TokenV2 to function as intended?**    
 
  (A): The deployer of the TokenV2 contract    
  (B): The TokenV1 contract    
