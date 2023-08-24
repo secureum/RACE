@@ -114,7 +114,7 @@ contract InSecureumNFT {
 (C): May burn the newly minted NFTs  
 (D): None of the above  
 
-**[Answers]: B**
+**[Answers]: A**
 
 ---
 
