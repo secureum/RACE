@@ -68,8 +68,8 @@ contract test {
 
 **[Q4] In the given contract snippet**
 
-pragma solidity 0.8.4;
 ```solidity
+pragma solidity 0.8.4;
 contract test {
     
     // Assume other required functionality is correctly implemented
