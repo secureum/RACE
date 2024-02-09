@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this RACE are based on the below contracts. This is the same contracts you will see for all the 8 questions in this RACE. The question is below the shown contracts.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.7;
 

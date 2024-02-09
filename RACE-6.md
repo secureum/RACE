@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this RACE are based on the _InSecureumLand_ contract. This is the same contract you will see for all the 8 questions in this RACE. _InSecureumLand_ is adapted from a well-known contract. The question is below the shown contract.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.10;
 

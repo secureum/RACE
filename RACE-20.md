@@ -1,5 +1,5 @@
 **Note**: The first four questions are based on the below library. The same library will appear for all the first four questions. The question is below the shown library.
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
@@ -83,7 +83,7 @@ library LibString {
 
 ---
 **Note**: The last four questions are based on the below abstract contract. The same abstract contract will appear for all the last four questions. The question is below the shown abstract contract.
-```
+```solidity
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 abstract contract Proxy is ReentrancyGuard {

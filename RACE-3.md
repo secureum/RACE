@@ -1,7 +1,7 @@
 **Note**: All 8 questions in this quiz are based on the _InSecureumNFT_ contract snippet. This is the same contract snippet you will see for all the 8 questions in this quiz.
 
 _InSecureumNFT_ is a NFT project that aims to distribute CryptoSAFU NFTs to its community where most of them are fairdropped based on past contributions and a few are sold. CryptoSAFUs with lower IDs have more unique traits, may be valued higher and therefore require a random distribution for fairness. Assume that all strictly required ERC721 functionality (not shown) and any other required functionality (not shown) are implemented correctly. Only functionality specific to the sale and minting of NFTs is shown in this contract snippet.
-```
+```solidity
 pragma solidity 0.8.0;
 
 interface ERC721TokenReceiver{function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external returns(bytes4);}

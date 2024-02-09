@@ -1,5 +1,5 @@
 **Note**: All 8 questions in this quiz are based on the _InSecureumToken_ contract shown below. This is the same contract you see for all the 8 questions in this quiz. The _InSecureumToken_ contract implements a token contract which allows users to buy tokens by depositing Ether (at a certain conversion ratio), and transfer tokens.
-```
+```solidity
 pragma solidity 0.7.0;
 
 contract InSecureumToken {

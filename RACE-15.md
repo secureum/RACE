@@ -1,5 +1,5 @@
 **Note:** All 8 questions in this RACE are based on the below contract. This is the same contract you will see for all the 8 questions in this RACE. The question is below the shown contract.
-```
+```solidity
 // SPDX-License-Identifier: agpl-3.0
 pragma solidity ^0.8.0;
 
@@ -100,28 +100,28 @@ contract Seller {
 ---
 **[Q1] What is/are the correct implementation(s) of the `nonReentrant()` modifier?** \
 (A): 
-```
+```solidity
        require (reentrancy_lock == 1);
        reentrancy_lock = 0;
         _;
        reentrancy_lock = 1;
 ```
 (B): 
-```
+```solidity
        require (reentrancy_lock == 0); 
        reentrancy_lock = 1;
         _;
        reentrancy_lock = 0;
 ```
 (C): 
-```
+```solidity
        require (reentrancy_lock == 1); 
        reentrancy_lock = 1;
         _;
        reentrancy_lock = 0;
 ```
 (D): 
-```
+```solidity
        require (reentrancy_lock == 0); 
        reentrancy_lock = 2;
        _;

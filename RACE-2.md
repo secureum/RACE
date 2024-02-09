@@ -1,5 +1,5 @@
 **Note**: All 8 questions in this quiz are based on the _InSecureumDAO_ contract snippet shown below. This is the same contract snippet you will see for all the 8 questions in this quiz. The _InSecureumDAO_ contract snippet illustrates some basic functionality of a Decentralized Autonomous Organization (DAO) which includes the opening of the DAO for memberships, allowing users to join as members by depositing a membership fee, creating proposals for voting, casting votes, etc. Assume that all other functionality (that is not shown or represented by ...) is implemented correctly.
-```
+```solidity
 pragma solidity 0.8.4;
 import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol';
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/Pausable.sol";

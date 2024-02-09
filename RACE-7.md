@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this RACE are based on the _InSecureumApe_ contract. This is the same contract you will see for all the 8 questions in this RACE. _InSecureumApe_ is adapted from a well-known contract. The question is below the shown contract.
 
-```
+```solidity
 pragma solidity ^0.7.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/access/Ownable.sol";

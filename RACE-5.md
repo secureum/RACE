@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this quiz are based on the _InSecureum_ contract. This is the same contract you will see for all the 8 questions in this quiz. _InSecureum_ is adapted from a well-known contract. The question is below the shown contract.
 
-```
+```solidity
 pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/IERC1155.sol";

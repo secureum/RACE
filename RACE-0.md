@@ -1,5 +1,5 @@
 **[Q1] The use of pragma in the given contract snippet**
-```
+```solidity
 pragma solidity ^0.6.0;
 
 contract test {
@@ -17,7 +17,7 @@ contract test {
 ---
 
 **[Q2] The given contract snippet has**  
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -39,7 +39,7 @@ contract test {
 ---
 
 **[Q3] The given contract snippet has**  
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -69,7 +69,7 @@ contract test {
 **[Q4] In the given contract snippet**
 
 pragma solidity 0.8.4;
-```
+```solidity
 contract test {
     
     // Assume other required functionality is correctly implemented
@@ -103,7 +103,7 @@ contract test {
 ---
 
 **[Q5] The security concern(s) in the given contract snippet is/are**  
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -130,7 +130,7 @@ contract test {
 ---
 
 **[Q6] The vulnerability/vulnerabilities present in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.7.0;
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 // which works with 0.7.0
@@ -159,7 +159,7 @@ contract test {
 ---
 
 **[Q7] The security concern(s) in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -184,7 +184,7 @@ contract test {
 ---
 
 **[Q8] The security concern(s) in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -214,7 +214,7 @@ contract test {
 ---
 
 **[Q9] The given contract snippet is vulnerable because of**
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -241,7 +241,7 @@ contract test {
 ---
 
 **[Q10] In the given contract snippet, the require check will**
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -265,7 +265,7 @@ contract test {
 ---
 
 **[Q11] The security concern(s) in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -290,7 +290,7 @@ contract test {
 ---
 
 **[Q12] The security concern(s) in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
@@ -329,7 +329,7 @@ contract test {
 ---
 
 **[Q13] The security concern(s) in the given proxy-based implementation contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 import "https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable/blob/master/contracts/proxy/utils/Initializable.sol";
 
@@ -366,7 +366,7 @@ contract test is Initializable {
 ---
 
 **[Q14] The security concern(s) in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol";
@@ -408,7 +408,7 @@ contract test {
 ---
 
 **[Q15] The vulnerability/vulnerabilities present in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol";
 
@@ -436,7 +436,7 @@ contract test {
 ---
 
 **[Q16] The security concern(s) in the given contract snippet is/are**
-```
+```solidity
 pragma solidity 0.8.4;
 
 contract test {
