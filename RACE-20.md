@@ -1,4 +1,5 @@
 **Note**: The first four questions are based on the below library. The same library will appear for all the first four questions. The question is below the shown library.
+
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
@@ -45,29 +46,33 @@ library LibString {
     }
 }
 ```
+
 ---
+
 **[Q1] Select all true statements:** \
 (A): The inline assembly block is `memory-safe` \
 (B): The memory after `toString(...)` call is always 32-byte aligned \
 (C): Instead of allocating memory from 0x40, the function can allocate from 0x0 to save gas (memory expansion cost) and still be correct \
-(D): None of the above 
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 A
 </b></details>
 
 ---
+
 **[Q2] Select all true statements about the expression `mstore(0x40, add(str, 128))`** \
 (A): The expression allocated more memory than required. The value 128 can be replaced by 96. \
 (B): The expression allocates less memory than required. The value 128 can be replaced by 160. \
 (C): The expression is redundant and can be removed to save gas \
-(D): The expression is not `memory-safe` assembly in this context 
+(D): The expression is not `memory-safe` assembly in this context
 
 <details><summary><b>[Answers]</b></summary><b>
 B
 </b></details>
 
 ---
+
 **[Q3] Select all true statements:** \
 (A): The expression `mstore(str, k)` at the beginning can be removed to save gas \
 (B): The expression `mstore(add(str, k), char)` can be replaced by an equivalent `mstore8(...)` to simplify the code \
@@ -79,6 +84,7 @@ A, B
 </b></details>
 
 ---
+
 **[Q4] Select all true statements:** \
 (A): The function correctly cleans all necessary memory regions \
 (B): Solidity will correctly be able to handle the string returned by the function \
@@ -90,7 +96,9 @@ B, C
 </b></details>
 
 ---
+
 **Note**: The last four questions are based on the below abstract contract. The same abstract contract will appear for all the last four questions. The question is below the shown abstract contract.
+
 ```solidity
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
@@ -121,6 +129,7 @@ abstract contract Proxy is ReentrancyGuard {
     }
 }
 ```
+
 **[Q5] Select all true statements:** \
 (A): The re-entrancy lock is always unnecessary as it’s never possible to re-enter the contract \
 (B): Calls to `_delegate` are correctly protected for re-entrancy \
@@ -132,6 +141,7 @@ C
 </b></details>
 
 ---
+
 **[Q6] Select all true statements:** \
 (A): The assembly block is correctly marked as `memory-safe` \
 (B): The assembly block will always violate the memory requirements needed for `memory-safe` blocks \
@@ -143,6 +153,7 @@ C
 </b></details>
 
 ---
+
 **[Q7] Select all true statements:** \
 (A): The expression `calldatacopy(0, 0, calldatasize())` violates `memory-safe` assembly annotation \
 (B): The expression `returndatacopy(0, 0, returndatasize())` violates `memory-safe` assembly annotation \
@@ -156,6 +167,7 @@ A, B
 </b></details>
 
 ---
+
 **[Q8] Select all true statements:** \
 (A): `delegatecall` can never re-enter as the state is shared \
 (B): `delegatecall` proxies without proper access controls may be prone to `selfdestruct` \

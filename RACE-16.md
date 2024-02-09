@@ -1,4 +1,5 @@
 **Note:** All 8 questions in this RACE are based on the below contract. This is the same contract you will see for all the 8 questions in this RACE. The question is below the shown contract.
+
 ```solidity
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
@@ -79,7 +80,9 @@ contract FlashLoan is IERC3156FlashLender {
    }
 }
 ```
+
 ---
+
 **[Q1] Which of the following is an explanation of why `flashLoan()` could revert?** \
 (A): The transaction reverts because a user requested to borrow more than `maxFlashLoan()` \
 (B): The transaction reverts because the receiver’s `onFlashLoan()` did not return `CALLBACK_SUCCESS` \
@@ -108,19 +111,19 @@ A
 (A): ERC223 \
 (b): ERC677 \
 (B): ERC777 \
-(C): ERC1155 
-    
+(C): ERC1155
+
 <details><summary><b>[Answers]</b></summary><b>
 C
 </b></details>
 
 ---
 
-**[Q4] Which external call made by `flashLoan()` could result in theft if the token(s) identified in the previous question  were to be used?** \
+**[Q4] Which external call made by `flashLoan()` could result in theft if the token(s) identified in the previous question were to be used?** \
 (A): `onFlashLoan()` \
 (B): `balanceOf()` \
 (C): `transferFrom()` \
-(D): `approve()` 
+(D): `approve()`
 
 <details><summary><b>[Answers]</b></summary><b>
 C
@@ -136,7 +139,7 @@ C
 
 <details><summary><b>[Answers]</b></summary><b>
 A
-</b></details> 
+</b></details>
 
 ---
 
@@ -172,6 +175,6 @@ D
 
 <details><summary><b>[Answers]</b></summary><b>
 B
-</b></details>  
+</b></details>
 
 ---

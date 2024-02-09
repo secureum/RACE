@@ -6,7 +6,7 @@ pragma solidity 0.8.17;
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract TestContract is Ownable {
-   
+
     function Test1(uint n) external pure returns(uint) {
         return n + abi.decode(msg.data[msg.data.length-64:], (uint));
     }
@@ -17,11 +17,11 @@ contract TestContract is Ownable {
         bytes memory all = bytes.concat(fcall,xtr);
         (bool success, bytes memory data) = address(this).staticcall(all);
         return abi.decode(data,(uint));
-    } 
+    }
 
     type Nonce is uint256;
     struct Book { Nonce nonce;}
-    
+
     function NextBookNonce(Book memory x) public pure {
        x.nonce = Nonce.wrap(Nonce.unwrap(x.nonce) + 3);
     }
@@ -31,7 +31,7 @@ contract TestContract is Ownable {
       bookIndex.nonce = Nonce.wrap(7);
       for (uint i=0;i<n;i++) {
          NextBookNonce(bookIndex);
-      }   
+      }
       return Nonce.unwrap(bookIndex.nonce);
     }
 
@@ -61,7 +61,7 @@ contract TestContract is Ownable {
         uint[] memory amount = new uint[](n+1);
         for (uint i=0;i<=n;i++) {
             amount[i] = i;
-        }    
+        }
         return process(a,amount);
     }
 
@@ -75,14 +75,14 @@ contract TestContract is Ownable {
         invariantCheck();
         require(!paused, "Paused");
     }
-    
+
     function invariantCheck() public {
         if (totalMinted > maxMinted) // this may never happen
             pause();
     }
 
     bool public paused;
-    function pause() public {  
+    function pause() public {
         paused = true;
     }
     function unpause() public onlyOwner {
@@ -100,10 +100,10 @@ contract TestContract is Ownable {
 
 **[Q1] Which statements are true in `Test1()`?**
 
-(A): The function does not use all supplied extra data    
-(B): The function can revert due to an underflow    
-(C): The function can revert due to an overflow    
-(D): The function accesses memory which it should not    
+(A): The function does not use all supplied extra data  
+(B): The function can revert due to an underflow  
+(C): The function can revert due to an overflow  
+(D): The function accesses memory which it should not
 
 <details><summary><b>[Answers]</b></summary><b>
 A, B, C
@@ -113,10 +113,10 @@ A, B, C
 
 **[Q2] Which statements are true in `Test2()`?**
 
-(A): Result of `encodePacked` is deterministic    
-(B): `abi.decode` always succeeds    
-(C): It calls function `Test1()` without any problem    
-(D): It should use `uint256` instead of `uint`    
+(A): Result of `encodePacked` is deterministic  
+(B): `abi.decode` always succeeds  
+(C): It calls function `Test1()` without any problem  
+(D): It should use `uint256` instead of `uint`
 
 <details><summary><b>[Answers]</b></summary><b>
 A, C
@@ -126,10 +126,10 @@ A, C
 
 **[Q3] Which statements are true in `NextBookNonce()`?**
 
-(A): `wrap` and `unwrap` cost additional gas    
-(B): It is safe to use `unchecked`    
-(C): There is something suspicious about the increment value    
-(D): It could have used `x.nonce++`    
+(A): `wrap` and `unwrap` cost additional gas  
+(B): It is safe to use `unchecked`  
+(C): There is something suspicious about the increment value  
+(D): It could have used `x.nonce++`
 
 <details><summary><b>[Answers]</b></summary><b>
 B, C
@@ -139,10 +139,10 @@ B, C
 
 **[Q4] Which statements are true in `Test3()`?**
 
-(A): ``bookIndex.nonce`` is incremented in the loop    
-(B): ``bookIndex.nonce`` cannot be incremented because `NextBookNonce` is `pure`    
-(C): ``i++`` can be made `unchecked`    
-(D): ``memory`` can be changed to `storage` without any other changes    
+(A): `bookIndex.nonce` is incremented in the loop  
+(B): `bookIndex.nonce` cannot be incremented because `NextBookNonce` is `pure`  
+(C): `i++` can be made `unchecked`  
+(D): `memory` can be changed to `storage` without any other changes
 
 <details><summary><b>[Answers]</b></summary><b>
 A, C
@@ -152,10 +152,10 @@ A, C
 
 **[Q5] Which statements are true In `Test4()`?**
 
-(A): The function always reverts with ``ZeroAddress()``    
-(B): The function always reverts with ``ZeroAmount()``    
-(C): The function never reverts with ``ZeroAddress()``    
-(D): The function never reverts with ``ZeroAmount()``    
+(A): The function always reverts with `ZeroAddress()`  
+(B): The function always reverts with `ZeroAmount()`  
+(C): The function never reverts with `ZeroAddress()`  
+(D): The function never reverts with `ZeroAmount()`
 
 <details><summary><b>[Answers]</b></summary><b>
 C, D
@@ -165,10 +165,10 @@ C, D
 
 **[Q6] Which statements are true in `Test5()`?**
 
-(A): modifier ``checkInvariants`` will pause the contract if too much is minted    
-(B): modifier ``checkInvariants`` will never pause the contract    
-(C): modifier ``checkInvariants`` will always pause the contract    
-(D): There are more efficient ways to handle the require    
+(A): modifier `checkInvariants` will pause the contract if too much is minted  
+(B): modifier `checkInvariants` will never pause the contract  
+(C): modifier `checkInvariants` will always pause the contract  
+(D): There are more efficient ways to handle the require
 
 <details><summary><b>[Answers]</b></summary><b>
 B, D
@@ -178,10 +178,10 @@ B, D
 
 **[Q7] Which statements are true about the owner?**
 
-(A): The owner is initialized    
-(B): The owner is not initialized    
-(C): The owner cannot be changed    
-(D): The owner can be changed    
+(A): The owner is initialized  
+(B): The owner is not initialized  
+(C): The owner cannot be changed  
+(D): The owner can be changed
 
 <details><summary><b>[Answers]</b></summary><b>
 A, D
@@ -191,10 +191,10 @@ A, D
 
 **[Q8] Which statements are true In `Test5()` and related functions?**
 
-(A): ``pause`` is unsafe    
-(B): ``unpause`` is unsafe    
-(C): The ``emit`` is done right    
-(D): The ``emit`` is done wrong    
+(A): `pause` is unsafe  
+(B): `unpause` is unsafe  
+(C): The `emit` is done right  
+(D): The `emit` is done wrong
 
 <details><summary><b>[Answers]</b></summary><b>
 A, D

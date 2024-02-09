@@ -9,7 +9,7 @@ contract USDCCollateral {
   address[] lenders;
   // A mapping to allow efficient is lender checks
   mapping(address => bool) isLender;
-  
+
   address immutable lendingPlatform;
   address token = ERC20(USDC_ADDRESS);
 
@@ -17,15 +17,15 @@ contract USDCCollateral {
   mapping (address => bool) balance;
 
   // USDC is very stable, so for every 1 USDC you can borrow 1 DAI or 1 USD worth of the other currency
-  // Similar to other lending platforms, this lending system uses an oracle to determine how much one can borrow. 
+  // Similar to other lending platforms, this lending system uses an oracle to determine how much one can borrow.
   // The following describes how the system determines the max borrow value (ignoring precision for simplicity).
-  // maxBorrow = (collateralRatio * underlying * underlyingValueUSD) / otherValueUSD 
+  // maxBorrow = (collateralRatio * underlying * underlyingValueUSD) / otherValueUSD
   // This encodes the margin requirement of the system.
-  uint collateralRatio = 100_000_000; 
+  uint collateralRatio = 100_000_000;
 
   constructor() {
       periodicFee = 1;
-      
+
       // approved collateral contracts are deployed by the lending platform
       // assume it is implemented correctly, and doesn't allow false collateral contracts.
       lendingPlatform = msg.sender;
@@ -42,7 +42,7 @@ contract USDCCollateral {
   function computeFee(uint periodicFee, uint balance) internal returns (uint) {
       // Assume this is a correctly implemented function that computes the share of fees that someone should receive based on their balance.
   }
- 
+
   // this function is called monthly by the lending platform
   // We compute how much fees the lender should receive and send it to them
   function payFees() external onlyLendingPlatform {
@@ -82,7 +82,6 @@ B, D
 
 ---
 
-
 ```solidity
 modifier noETH {
   require(balanceOf(this) == 0);
@@ -106,7 +105,7 @@ C
 ```solidity
 modifier checkedPool{
   address pool;
-  assembly { 
+  assembly {
 let size := calldatasize()
       pool := calldataload(sub(size, 32))
   }
@@ -195,7 +194,7 @@ contract ERC20Collateral {
         token.transferFrom(address(this), msg.sender, fee);
         // Transfer the rest of the collateral to the platform
         token.transferFrom(address(this), lendingPlatform, oldDeposit - fee);
-        
+
         // Now ping the liquidated lender for him to be able to react to the liquidation
         // We need to use a low-level call because the lender might not be a contract
         // and the compiler checks code size on high-level calls, reverting if it's 0
@@ -208,7 +207,7 @@ contract ERC20Collateral {
 }
 ```
 
-**[Q5] The lending protocol has also built in a liquidation function to be called in the case of under-collateralization. Anyone can call the function and be rewarded for calling it by taking a small percentage of the liquidation. The liquidation function has a vulnerability  which can be exploited because:**
+**[Q5] The lending protocol has also built in a liquidation function to be called in the case of under-collateralization. Anyone can call the function and be rewarded for calling it by taking a small percentage of the liquidation. The liquidation function has a vulnerability which can be exploited because:**
 
 (A): The lender can open a position with a low amount of collateral and the fee payout reverts\
 (B): The lender can make the position “unliquidatable” with reentrancy\
@@ -251,7 +250,7 @@ C
 // Assume as adding to the code shown for Questions 5 & 6
 contract ERC20Collateral {
   // This is a contract that's part of a larger system implementing a lending protocol
-    
+
     ...
 
 function transferCollateral(

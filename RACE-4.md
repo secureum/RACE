@@ -131,7 +131,7 @@ function _transfer(
 (A): Atypical decimals value  
 (B): Non-standard _decreaseAllowance_ and _increaseAllowance_  
 (C): Non-standard _transfer_  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 A, B
@@ -144,7 +144,7 @@ A, B
 (A): `_decimals()` can have _pure_ state mutability instead of _view_  
 (B): `_burn()` can have _external_ visibility instead of _internal_  
 (C): `_mint()` should have _internal_ visibility instead of _external_  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 A, C
@@ -157,7 +157,7 @@ A, C
 (A): Is susceptible to an integer underflow  
 (B): Has an incorrect allowance check  
 (C): Has an optimisation indicative of unlimited approvals  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 A, B, C
@@ -170,7 +170,7 @@ A, B, C
 (A): _increaseAllowance_ is susceptible to an integer overflow  
 (B): _decreaseAllowance_ is susceptible to an integer overflow  
 (C): _decreaseAllowance_ does not allow reducing allowance to zero  
-(D): _decreaseAllowance_ can be optimised with `unchecked{}`  
+(D): _decreaseAllowance_ can be optimised with `unchecked{}`
 
 <details><summary><b>[Answers]</b></summary><b>
 C, D
@@ -183,7 +183,7 @@ C, D
 (A): Is missing a zero-address validation  
 (B): Is susceptible to an integer overflow  
 (C): Is susceptible to an integer underflow  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 D

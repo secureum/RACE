@@ -1,4 +1,5 @@
 **Note**: All 8 questions in this RACE are based on the below contract. This is the same contract you will see for all the 8 questions in this RACE. The question is below the shown contract.
+
 ```solidity
 pragma solidity ^0.8.0; // using 0.8 to be safe from arithmetic risks
 
@@ -131,29 +132,33 @@ contract Bank{
 
 }
 ```
+
 ---
+
 **[Q1] What risk(s) should be considered when reviewing this contract?** \
 (A): Reentrancy risks \
 (B): Logic bugs \
 (C): Front-running risks \
-(D): Arithmetic risks 
+(D): Arithmetic risks
 
 <details><summary><b>[Answers]</b></summary><b>
 A, B, C, D
 </b></details>
 
 ---
+
 **[Q2] Which of the following statement(s) is/are true?** \
 (A): No overflow can ever occur in a contract compiled with solc version 0.8 \
 (B): `IERC20.decimals returns(uint256)` is not a correct ERC20 function according to the ERC20 specification \
 (C): The contract does not follow Natspec for all the documentation \
-(D): None of the above 
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 B, C
 </b></details>
 
 ---
+
 **[Q3] Which of the following is an/are invariant(s) that should hold true? (assuming no bug)** \
 (A): The contract's ether balance must be strictly equal to the sum of all the balances (in the `balances` mapping) \
 (B): For any user, `minted[user] <= balances[user] * 10` \
@@ -165,6 +170,7 @@ B
 </b></details>
 
 ---
+
 **[Q4] Which of the following sentence(s) is/are true regarding `getBalances`?** \
 (A): `getBalances(msg.sender)` returns the sender's balance \
 (B): `getBalances` reverts if the user's balance is zero \
@@ -176,6 +182,7 @@ C
 </b></details>
 
 ---
+
 **[Q5] Which of the following sentence(s) is/are true regarding the `balances` mapping?** \
 (A): An attacker can increase their `balances` (theft) from `balances[victim]` \
 (B): An attacker can reset `balances[victim]` \
@@ -187,6 +194,7 @@ B
 </b></details>
 
 ---
+
 **[Q6] Which of the following sentence(s) is/are true regarding reentrancies in this contract?** \
 (A): `nonReentrant` protects the contract from reentrancies \
 (B): A correct reentrancy protection modifier is not needed if `withdraw` is refactored to follow the CEI pattern \
@@ -198,6 +206,7 @@ B
 </b></details>
 
 ---
+
 **[Q7] The `mint` function has the following risks (assuming there are no bugs in the other functions):** \
 (A): The user can generate tokens without having locked ether \
 (B): An attacker can front-run a call to `mint` and make it revert \
@@ -209,6 +218,7 @@ A
 </b></details>
 
 ---
+
 **[Q8] The `burn` and `_has_enough_balance` functions have the following risks (assuming there are no bugs in the other functions):** \
 (A): The user can unlock their balance without burning the underlying tokens \
 (B): An attacker can front-run a call to `burn` and make it revert \

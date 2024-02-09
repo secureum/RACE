@@ -170,7 +170,7 @@ contract CallbackERC20 {
 
 ---
 
-**[Q1] In `transferFrom()`, `unchecked` is __not__ used in the allowance subtraction:**\
+**[Q1] In `transferFrom()`, `unchecked` is **not** used in the allowance subtraction:**\
 (A): To save gas\
 (B): To avoid unauthorized transfers\
 (C): To avoid reentrancy\
@@ -194,13 +194,11 @@ D
 
 ---
 
-
 **[Q3] In `name()` and `symbol()`, the returned values are incorrect because:**\
 (A): The string encoding is too short\
 (B): Inline assembly `return` does not leave the function\
 (C): `MSTORE` does not fill all bytes until 0x5f and function may return junk at the end\
 (D): The code always reverts
-
 
 <details><summary><b>[Answers]</b></summary><b>
 C
@@ -209,13 +207,13 @@ C
 ---
 
 **[Q4] To correct `name()`, one could make the following change(s):**\
-(A): ```assembly {
+(A): `assembly {
           mstore(0x20, 0x20)
           mstore(0x48, 0x0843616c6c6261636b)
           return(0x20, 0x60)
-       }```\
-(B): ```function name() external pure returns (string memory n) { n = "Callback"; }```\
-(C): ```return "Callback";```\
+       }`\
+(B): `function name() external pure returns (string memory n) { n = "Callback"; }`\
+(C): `return "Callback";`\
 (D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
@@ -223,7 +221,6 @@ A, B, C
 </b></details>
 
 ---
-
 
 **[Q5] The concern(s) with the check in `notify()` is/are:**\
 (A): Selector 0x00000000 is the `fallback` function\
@@ -260,7 +257,6 @@ B
 </b></details>
 
 ---
-
 
 **[Q8] How can the contract be exploited for loss-of-funds via notify callback reentrancy?**\
 (A): During the callback, while being the sender of a transfer, repeat the transfer\

@@ -97,78 +97,78 @@ contract PermitModule is TokenV1, ERC20Permit {
 
 ---
 
-**[Q1] Sensible gas optimization(s) would be**    
+**[Q1] Sensible gas optimization(s) would be**
 
-(A) Making `MIGRATOR_ROLE` state variable constant    
-(B) Making `UNDERLYING` state variable constant    
-(C) Making `MIGRATOR_ROLE` state variable immutable    
-(D) Making `UNDERLYING` state variable immutable           
-    
+(A) Making `MIGRATOR_ROLE` state variable constant  
+(B) Making `UNDERLYING` state variable constant  
+(C) Making `MIGRATOR_ROLE` state variable immutable  
+(D) Making `UNDERLYING` state variable immutable
+
 <details><summary><b>[Answers]</b></summary><b>
 A, D
-</b></details>    
+</b></details>
 
 ---
 
 **[Q2] What would a caller with `MIGRATOR_ROLE` permission be capable of?**
 
-(A): Manipulating TokenV1's storage    
-(B): Deleting TokenV1's stored bytecode    
-(C): Changing TokenV1's stored bytecode to something different    
-(D): With the current code it's not possible for anyone to have `MIGRATOR_ROLE` permission    
-    
+(A): Manipulating TokenV1's storage  
+(B): Deleting TokenV1's stored bytecode  
+(C): Changing TokenV1's stored bytecode to something different  
+(D): With the current code it's not possible for anyone to have `MIGRATOR_ROLE` permission
+
 <details><summary><b>[Answers]</b></summary><b>
 A, B
-</b></details>    
+</b></details>
 
 ---
 
-**[Q3] Vault initialized with TokenV1 as underlying**    
-    
- (A): Can be drained by re-entering during withdrawal    
- (B): Can be drained during withdrawal due to an integer underflow    
- (C): Allows stealing approved tokens due to a phantom (i.e. missing) function    
- (D): None of the above    
-    
+**[Q3] Vault initialized with TokenV1 as underlying**
+
+(A): Can be drained by re-entering during withdrawal  
+ (B): Can be drained during withdrawal due to an integer underflow  
+ (C): Allows stealing approved tokens due to a phantom (i.e. missing) function  
+ (D): None of the above
+
 <details><summary><b>[Answers]</b></summary><b>
 C
 </b></details>    
     
 ---
 
-**[Q4] If Vault were to use `safeTransferFrom` instead of `transferFrom` then**    
-    
-(A): It would be able to safely support tokens that don't revert on error    
-(B): It would ensure that tokens are only sent to contracts that support handling them    
-(C): It would introduce a re-entrancy vulnerability due to receive hooks    
-(D): None of the above      
-    
+**[Q4] If Vault were to use `safeTransferFrom` instead of `transferFrom` then**
+
+(A): It would be able to safely support tokens that don't revert on error  
+(B): It would ensure that tokens are only sent to contracts that support handling them  
+(C): It would introduce a re-entrancy vulnerability due to receive hooks  
+(D): None of the above
+
 <details><summary><b>[Answers]</b></summary><b>
 A
 </b></details>    
     
 ---
 
-**[Q5] Who would need the `MIGRATOR_ROLE` for TokenV2 to function as intended?**    
+**[Q5] Who would need the `MIGRATOR_ROLE` for TokenV2 to function as intended?**
 
- (A): The deployer of the TokenV2 contract    
- (B): The TokenV1 contract    
- (C): The TokenV2 contract    
- (D): The PermitModule contract     
-    
+(A): The deployer of the TokenV2 contract  
+ (B): The TokenV1 contract  
+ (C): The TokenV2 contract  
+ (D): The PermitModule contract
+
 <details><summary><b>[Answers]</b></summary><b>
 C
 </b></details>    
     
 ---
     
-**[Q6] With TokenV2 deployed, a Vault initialized with TokenV1 as underlying**    
+**[Q6] With TokenV2 deployed, a Vault initialized with TokenV1 as underlying**
 
- (A): Is no longer vulnerable in the `depositWithPermit()` function    
- (B): Becomes more vulnerable due to a Double-Entry-Point    
- (C): Stops functioning because TokenV1 has been replaced    
- (D): None of the above      
-    
+(A): Is no longer vulnerable in the `depositWithPermit()` function  
+ (B): Becomes more vulnerable due to a Double-Entry-Point  
+ (C): Stops functioning because TokenV1 has been replaced  
+ (D): None of the above
+
 <details><summary><b>[Answers]</b></summary><b>
 B
 </b></details>    
@@ -188,16 +188,15 @@ C, D
     
 ---
 
-**[Q8] The PermitModule contract**    
-    
- (A): Acts as a proxy    
- (B): Acts as an implementation    
- (C): Allows anyone to manipulate TokenV2's balances    
- (D): Can be self-destructed by anyone     
-    
+**[Q8] The PermitModule contract**
+
+(A): Acts as a proxy  
+ (B): Acts as an implementation  
+ (C): Allows anyone to manipulate TokenV2's balances  
+ (D): Can be self-destructed by anyone
+
 <details><summary><b>[Answers]</b></summary><b>
 B, D
 </b></details>    
     
 ---
-    

@@ -190,7 +190,7 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
         _operatorApprovals[owner][operator] = approved;
         emit ApprovalForAll(owner, operator, approved);
     }
- 
+
     function _doSafeTransferAcceptanceCheck(
         address operator,
         address from,
@@ -248,7 +248,7 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): May be optimised by caching state variable in local variable  
 (B): May be optimised by changing state mutability from _view_ to _pure_  
 (C): May be optimised by changing its visibility to _external_  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 D
@@ -261,7 +261,7 @@ D
 (A): _balanceOfBatch()_  
 (B): `_safeBatchTransferFrom()`  
 (C): `_mintBatch()`  
-(D): `_burnBatch()`  
+(D): `_burnBatch()`
 
 <details><summary><b>[Answers]</b></summary><b>
 A, B, C, D
@@ -274,7 +274,7 @@ A, B, C, D
 (A): Incorrect visibility  
 (B): Susceptibility to an integer underflow  
 (C): Missing zero-address validation  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 A, B, C
@@ -287,7 +287,7 @@ A, B, C
 (A): Missing array lengths mismatch check  
 (B): Susceptibility to an integer underflow  
 (C): Incorrect balance update  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 A, C
@@ -300,7 +300,7 @@ A, C
 (A): Missing array lengths mismatch check  
 (B): Incorrect event emission  
 (C): Allows burning of tokens  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 A, B, C
@@ -313,7 +313,7 @@ A, B, C
 (A): Missing zero-address validation  
 (B): Susceptibility to an integer underflow  
 (C): Incorrect balance update  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 D
@@ -326,7 +326,7 @@ D
 (A): _isContract_ check on incorrect address  
 (B): Incorrect check on return value  
 (C): Call to incorrect _isContract_ implementation  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 B, C
@@ -339,7 +339,7 @@ B, C
 (A): Incorrect visibility  
 (B): Incorrect operator in the comparison  
 (C): Unnecessary because Ethereum only has Contract accounts  
-(D): None of the above  
+(D): None of the above
 
 <details><summary><b>[Answers]</b></summary><b>
 B
