@@ -57,7 +57,9 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): ERC721  
 (D): None of the above  
 
-**[Answers]: D** 
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details> 
 
 ---
 
@@ -68,7 +70,9 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): A way to withdraw/exchange/use Ether from the contract  
 (D): None of the above  
 
-**[Answers]: C**  
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>  
 
 ---
 
@@ -79,7 +83,9 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): _transfer()_ can be external  
 (D): _safeAdd()_ can be public  
 
-**[Answers]: C,D**
+<details><summary><b>[Answers]</b></summary><b>
+C,D
+</b></details>
 
 ---
 
@@ -90,7 +96,9 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): `100`  
 (D): None of the above  
 
-**[Answers]: D**  
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>  
 
 ---
 
@@ -101,7 +109,9 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): A division by zero allows one to trap/freeze the system  
 (D): None of the above  
 
-**[Answers]: B**  
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>  
 
 ---
 
@@ -112,7 +122,9 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): Incorrect balance update allows one to receive new tokens for free  
 (D): None of the above  
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -123,7 +135,9 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): A reentrancy allows one to receive new tokens for free  
 (D): None of the above  
 
-**[Answers]: D**  
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>  
 
 ---
 
@@ -134,6 +148,8 @@ function safeAdd(uint a, uint b) pure internal returns(uint) {
 (C): An integer overflow allows one to trap/freeze the system  
 (D): None of the above  
 
-**[Answers]: D or B or C or B,C**  
+<details><summary><b>[Answers]</b></summary><b>
+D or B or C or B,C
+</b></details>  
 
 ---

@@ -91,7 +91,9 @@ contract Staking {
 (C) Follows checks-effects-interaction pattern best practice    
 (D) User can withdraw more than deposited      
     
-**[Answers]: D**    
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>    
 
 ---
 
@@ -102,7 +104,9 @@ contract Staking {
 (C): Require `amount` to be <= user’s balance deposited earlier    
 (D): Remove if/else block and add `_userBalances[msg.sender] -= amount` before `safeTransferFrom`    
     
-**[Answers]: A, C, D**    
+<details><summary><b>[Answers]</b></summary><b>
+A, C, D
+</b></details>    
 
 ---
 
@@ -113,7 +117,9 @@ contract Staking {
 (C): Will always revert    
 (D): None of the above    
     
-**[Answers]: A**    
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>    
     
 ---
 
@@ -124,7 +130,9 @@ contract Staking {
 (C): Anyone can successfully call the function    
 (D): None of the above    
     
-**[Answers]: B, C**    
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>    
     
 ---
 
@@ -135,7 +143,9 @@ contract Staking {
 (C): Allows a user to fund the deposit for another user    
 (D): None of the above    
     
-**[Answers]: A, B**    
+<details><summary><b>[Answers]</b></summary><b>
+A, B
+</b></details>    
     
 ---
     
@@ -146,7 +156,9 @@ contract Staking {
 (C): User withdrawals can be delayed indefinitely via DoS attack    
 (D): None of the above    
     
-**[Answers]: A, C**    
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>    
     
 ---
     
@@ -157,7 +169,9 @@ contract Staking {
 (C): `Deposit` event is always emitted incorrectly    
 (D): `Deposit` event is emitted with incorrect user    
     
-**[Answers]: B, D**    
+<details><summary><b>[Answers]</b></summary><b>
+B, D
+</b></details>    
     
 ---
 
@@ -168,7 +182,9 @@ contract Staking {
 (C): Use `unchecked`    
 (D): None of the above    
     
-**[Answers]: B, C**    
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>    
     
 ---
     

@@ -114,7 +114,9 @@ contract InSecureumNFT {
 (C): May burn the newly minted NFTs  
 (D): None of the above  
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
@@ -125,7 +127,9 @@ contract InSecureumNFT {
 (C): Miners can manipulate _block.timestamp_ to facilitate minting of desired NFT  
 (D): None of the above  
 
-**[Answers]: A,B,C**
+<details><summary><b>[Answers]</b></summary><b>
+A,B,C
+</b></details>
 
 ---
 
@@ -136,7 +140,9 @@ contract InSecureumNFT {
 (C): Visibility should be changed to _external_  
 (D): None of the above  
 
-**[Answers]: A,B**  
+<details><summary><b>[Answers]</b></summary><b>
+A,B
+</b></details>  
 
 ---
 
@@ -147,7 +153,9 @@ contract InSecureumNFT {
 (C): Susceptible to reentrancy during minting  
 (D): Perfectly safe for production  
 
-**[Answers]: B,C**
+<details><summary><b>[Answers]</b></summary><b>
+B,C
+</b></details>
 
 ---
 
@@ -158,7 +166,9 @@ contract InSecureumNFT {
 (C): It will behave as documented in code to mint the expected number of NFTs in production  
 (D): None of the above  
 
-**[Answers]: A,B**
+<details><summary><b>[Answers]</b></summary><b>
+A,B
+</b></details>
 
 ---
 
@@ -169,7 +179,9 @@ contract InSecureumNFT {
 (C): Must be called for minting to happen successfully  
 (D): None of the above  
 
-**[Answers]: A,B,C**  
+<details><summary><b>[Answers]</b></summary><b>
+A,B,C
+</b></details>  
 
 ---
 
@@ -180,7 +192,9 @@ contract InSecureumNFT {
 (C): Transfers the NFT _salePrice_ to the _beneficiary_ address  
 (D): May be optimized to prevent any zero ETH transfers in its refund mechanism  
 
-**[Answers]: B,C,D**  
+<details><summary><b>[Answers]</b></summary><b>
+B,C,D
+</b></details>  
 
 ---
 
@@ -191,6 +205,8 @@ contract InSecureumNFT {
 (C): Is missing an additional check on _publicSale_  
 (D): Is missing an event emit in _startSale_  
 
-**[Answers]: A,C,D**
+<details><summary><b>[Answers]</b></summary><b>
+A,C,D
+</b></details>
 
 ---

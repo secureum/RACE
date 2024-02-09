@@ -494,7 +494,9 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): Missing time-delayed change of critical parameters  
 (D): Accidentally sent Ether gets locked in contract  
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -505,7 +507,9 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): Incorrect modifier  
 (D): None of the above  
 
-**[Answers]: A, B**
+<details><summary><b>[Answers]</b></summary><b>
+A, B
+</b></details>
 
 ---
 
@@ -516,7 +520,9 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): Minting could exceed `maxMintPerAddress`  
 (D): None of the above  
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
@@ -527,7 +533,9 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): `contributorsClaimLand`  
 (D): None of the above  
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -538,7 +546,9 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): Anyone can call `contributorsClaimLand`  
 (D): None of the above  
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -549,7 +559,9 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): It depends on deprecated Chainlink VRF v1  
 (D): None of the above  
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -560,7 +572,9 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): Minimal inlined comments  
 (D): None of the above  
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -571,6 +585,8 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (C): Using `unchecked` in for loop increments  
 (D): None of the above  
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---

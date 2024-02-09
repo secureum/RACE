@@ -63,7 +63,9 @@ contract USDCCollateral {
 (C): USDC should not be used as collateral for loans\
 (D): None of the above
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
@@ -74,7 +76,9 @@ contract USDCCollateral {
 (C): payFees() might re-enter the contract, paying all fees again\
 (D): You can deposit at any point during the period
 
-**[Answers]: B, D**
+<details><summary><b>[Answers]</b></summary><b>
+B, D
+</b></details>
 
 ---
 
@@ -93,7 +97,9 @@ modifier noETH {
 (C): Developers should remove the modifier but achieve the required effect by omitting the payable keyword on deposit function\
 (D): None of the above
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -120,7 +126,9 @@ function anotherPoolOperation(...., address pool) public checkedPool { ... }
 (C): Everything is fine; this code has no problems\
 (D): None of the above
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
@@ -207,7 +215,9 @@ contract ERC20Collateral {
 (C): The lender can liquidate other positions with his callback and make more money\
 (D): The liquidator can take the full collateral amount with reentrancy
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
@@ -218,7 +228,9 @@ contract ERC20Collateral {
 (C): The lender can make their position “unliquidatable” by consuming all the gas provided in the callback\
 (D): The liquidated lender can tokenize the extra gas in the callback and make a profit
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
@@ -229,7 +241,9 @@ contract ERC20Collateral {
 (C): Deploy a collateral contract with your own custom token and seed an AMM pool with some ETH and this token, tricking the bot\
 (D): There is no way to do it
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -273,6 +287,8 @@ function transferCollateral(
 (C): Lender A can grief lender B by sending a malformed signature (assuming the S parameter is correct)\
 (D): Lender B can steal from another lender C, by submitting a malformed signature.
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---

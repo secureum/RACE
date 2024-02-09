@@ -64,7 +64,9 @@ contract Proxy is Ownable {
 (C): Includes a comma separated list of return value types  
 (D): Is generated only for public and external functions  
 
-**[Answers]: A, B, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, D
+</b></details>
 
 ---
 
@@ -75,7 +77,9 @@ contract Proxy is Ownable {
 (C): Transparent Proxy  
 (D): Metamorphic Proxy  
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -86,7 +90,9 @@ contract Proxy is Ownable {
 (C): Packing multiple implementation addresses into the same storage slot  
 (D): Moving the calculation of the `counter()` function's signature hash to a constant  
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
@@ -97,7 +103,9 @@ contract Proxy is Ownable {
 (C): Increases the integer value in the Proxy's storage slot located at index 1  
 (D): Delegate-calls to the zero-address  
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -108,7 +116,9 @@ contract Proxy is Ownable {
 (C): Will succeed and return the value of counter before it was decreased  
 (D): Will succeed and return nothing  
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -119,7 +129,9 @@ contract Proxy is Ownable {
 (C): Proxy's `implementations` variable's storage slot being overwritten causes a DoS  
 (D): None of the above  
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -130,7 +142,9 @@ contract Proxy is Ownable {
 (C): Has a storage clash in slot 0 which will cause issues with the current Mastercopy  
 (D): None of the above  
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
@@ -141,6 +155,8 @@ contract Proxy is Ownable {
 (C): Interferes with the Slot-Hash calculation for the implementations-mapping by overwriting the scratch space  
 (D): None of the above  
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---

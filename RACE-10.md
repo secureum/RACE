@@ -105,7 +105,9 @@ contract TestContract is Ownable {
 (C): The function can revert due to an overflow    
 (D): The function accesses memory which it should not    
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -116,7 +118,9 @@ contract TestContract is Ownable {
 (C): It calls function `Test1()` without any problem    
 (D): It should use `uint256` instead of `uint`    
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -127,7 +131,9 @@ contract TestContract is Ownable {
 (C): There is something suspicious about the increment value    
 (D): It could have used `x.nonce++`    
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -138,7 +144,9 @@ contract TestContract is Ownable {
 (C): ``i++`` can be made `unchecked`    
 (D): ``memory`` can be changed to `storage` without any other changes    
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -149,7 +157,9 @@ contract TestContract is Ownable {
 (C): The function never reverts with ``ZeroAddress()``    
 (D): The function never reverts with ``ZeroAmount()``    
 
-**[Answers]: C, D**
+<details><summary><b>[Answers]</b></summary><b>
+C, D
+</b></details>
 
 ---
 
@@ -160,7 +170,9 @@ contract TestContract is Ownable {
 (C): modifier ``checkInvariants`` will always pause the contract    
 (D): There are more efficient ways to handle the require    
 
-**[Answers]: B, D**
+<details><summary><b>[Answers]</b></summary><b>
+B, D
+</b></details>
 
 ---
 
@@ -171,7 +183,9 @@ contract TestContract is Ownable {
 (C): The owner cannot be changed    
 (D): The owner can be changed    
 
-**[Answers]: A, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, D
+</b></details>
 
 ---
 
@@ -182,6 +196,8 @@ contract TestContract is Ownable {
 (C): The ``emit`` is done right    
 (D): The ``emit`` is done wrong    
 
-**[Answers]: A, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, D
+</b></details>
 
 ---

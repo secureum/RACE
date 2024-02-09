@@ -104,7 +104,9 @@ contract InSecureumApe is ERC721, Ownable {
 (C): 0.08 ETH  
 (D): 0.8 ETH  
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -115,7 +117,9 @@ contract InSecureumApe is ERC721, Ownable {
 (C): Single-step ownership change  
 (D): Missing event emits in and time-delayed effects of owner functions  
 
-**[Answers]: A, B, C, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C, D
+</b></details>
 
 ---
 
@@ -126,7 +130,9 @@ contract InSecureumApe is ERC721, Ownable {
 (C): Potential integer overflow  
 (D): None of the above  
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -137,7 +143,9 @@ contract InSecureumApe is ERC721, Ownable {
 (C): `MAX_APES` + 30  
 (D): `type(uint256).max`  
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -148,7 +156,9 @@ contract InSecureumApe is ERC721, Ownable {
 (C): Uses `_safeMint` to prevent locked/stuck NFTs  
 (D): None of the above  
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -159,7 +169,9 @@ contract InSecureumApe is ERC721, Ownable {
 (C): Reentrancy allowing bypass of `maxApePurchase` check  
 (D): None of the above  
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -170,7 +182,9 @@ contract InSecureumApe is ERC721, Ownable {
 (C): May be triggered only 9 days after sale start  
 (D): Accounts for the fact that EVM only stores previous 256 block hashes  
 
-**[Answers]: A, B, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, D
+</b></details>
 
 ---
 
@@ -181,6 +195,8 @@ contract InSecureumApe is ERC721, Ownable {
 (C): Use of immutables  
 (D): None of the above  
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---

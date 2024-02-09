@@ -250,7 +250,9 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): May be optimised by changing its visibility to _external_  
 (D): None of the above  
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -261,7 +263,9 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): `_mintBatch()`  
 (D): `_burnBatch()`  
 
-**[Answers]: A, B, C, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C, D
+</b></details>
 
 ---
 
@@ -272,7 +276,9 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): Missing zero-address validation  
 (D): None of the above  
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -283,7 +289,9 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): Incorrect balance update  
 (D): None of the above  
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -294,7 +302,9 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): Allows burning of tokens  
 (D): None of the above  
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -305,7 +315,9 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): Incorrect balance update  
 (D): None of the above  
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -316,7 +328,9 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): Call to incorrect _isContract_ implementation  
 (D): None of the above  
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -327,6 +341,8 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (C): Unnecessary because Ethereum only has Contract accounts  
 (D): None of the above  
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---

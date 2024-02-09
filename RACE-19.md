@@ -94,7 +94,9 @@ contract Wallet {
 (C): Not all opcodes in the bytecode are guaranteed to be supported \
 (D): None of the above 
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 **[Q2] The security concern(s) in `WalletFactory` is/are:** \
@@ -103,7 +105,9 @@ contract Wallet {
 (C): No access control on wallet deployment \
 (D): Deployment may silently fail 
 
-**[Answers]: A, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, D
+</b></details>
 
 ---
 **[Q3] Design flaw(s) of `Wallet` is/are:** \
@@ -112,7 +116,9 @@ contract Wallet {
 (C): Assembly usage is unsafe for the Yul IR pipeline \
 (D): Calling a `payable` method in a for-loop
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 **[Q4] The security concern(s) with hashing of `transaction` parameter in `execute` is/are:** \
@@ -121,7 +127,9 @@ contract Wallet {
 (C): `keccak256` hash collision attacks \
 (D): Reentrancy attacks
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 **[Q5] If the hashed payload in `execute` were to exclude a nonce, the security concern(s) with `ecrecover` would be:** \
@@ -130,7 +138,9 @@ contract Wallet {
 (C): Signature malleability by hash collisions \
 (D): Forcefully reverting transactions
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 **[Q6] The security concern(s) with `Wallet` is/are:** \
@@ -139,7 +149,9 @@ contract Wallet {
 (C): Anyone can steal the contract ETH balance \
 (D): None of the above
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 **[Q7] The nonce best practice(s) _not_ followed correctly is/are:** \
@@ -148,7 +160,9 @@ contract Wallet {
 (C): Nonce is not incremented correctly on transaction execution \
 (D): None of the above
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 **[Q8] The security concern(s) with `Wallet` contract related to ERC721 tokens is/are:** \
@@ -157,6 +171,8 @@ contract Wallet {
 (C): Failure to receive any ERC721 tokens \
 (D): Unauthorized burning of ERC721 tokens
 
-**[Answers]: B, D**
+<details><summary><b>[Answers]</b></summary><b>
+B, D
+</b></details>
 
 ---

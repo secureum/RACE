@@ -83,7 +83,9 @@ contract Vault is Pausable {
 (C): With the "cap exceeded" error \
 (D): If called internally 
 
-**[Answers]: A, B**
+<details><summary><b>[Answers]</b></summary><b>
+A, B
+</b></details>
 
 ---
 **[Q2] What issues pertain to the `deposit()` function?** \
@@ -92,7 +94,9 @@ contract Vault is Pausable {
 (C): Accounting mismatch if user specifies `amount` < `msg.value` \
 (D): `totalContributionCap` isn't enforced on an individual level 
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 **[Q3] Which of the following is/are true about `withdraw()`?** \
@@ -101,7 +105,9 @@ contract Vault is Pausable {
 (C): Assuming a sufficiently high gas limit, the function reverts from the recipient (caller) consuming all forwarded gas \
 (D): May revert with "failed to transfer ETH"
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 **[Q4] Which of the following parameters are correctly emitted in the `ContributorsUpdated()` event?** \
@@ -110,7 +116,9 @@ contract Vault is Pausable {
 (C): `newNumContributors` \
 (D): None of the above
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 **[Q5] The vault deployer can pause the following functions:** \
@@ -119,7 +127,9 @@ contract Vault is Pausable {
 (C): `requestAllowance()` \
 (D): None of the above
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 **[Q6] What is the largest possible allowance given to the controller?** \
@@ -128,7 +138,9 @@ contract Vault is Pausable {
 (C): 100% of `totalContributionCap` \
 (D): Unbounded
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 **[Q7] The `requestAllowance()` implementation would have failed after the 1st call for tokens that only allow zero to non-zero allowances. Which of the following mitigations do NOT work?** \
@@ -137,7 +149,9 @@ contract Vault is Pausable {
 (C): `safeIncreaseAllowance(0)` followed by `safeIncreaseAllowance(type(uint256).max)` \
 (D): `safeDecreaseAllowance(0)` followed by `safeApprove(type(uint256).max)` 
 
-**[Answers]: B, C, D**
+<details><summary><b>[Answers]</b></summary><b>
+B, C, D
+</b></details>
 
 ---
 **[Q8] Which of the following gas optimizations are relevant in reducing runtime gas costs for the vault contract?** \
@@ -146,6 +160,8 @@ contract Vault is Pausable {
 (C): Renaming functions so that the most used functions have smaller method IDs \
 (D): Use `unchecked` math in `withdraw()`
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
