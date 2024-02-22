@@ -1,7 +1,8 @@
 **Note**: All 8 questions in this quiz are based on the _InSecureumNFT_ contract snippet. This is the same contract snippet you will see for all the 8 questions in this quiz.
 
 _InSecureumNFT_ is a NFT project that aims to distribute CryptoSAFU NFTs to its community where most of them are fairdropped based on past contributions and a few are sold. CryptoSAFUs with lower IDs have more unique traits, may be valued higher and therefore require a random distribution for fairness. Assume that all strictly required ERC721 functionality (not shown) and any other required functionality (not shown) are implemented correctly. Only functionality specific to the sale and minting of NFTs is shown in this contract snippet.
-```
+
+```solidity
 pragma solidity 0.8.0;
 
 interface ERC721TokenReceiver{function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external returns(bytes4);}
@@ -21,10 +22,10 @@ contract InSecureumNFT {
     bool public publicSale = false;
     uint private price;
     uint public saleStartTime;
-    uint public constant saleDuration = 13*13337; // 13337 blocks assuming 13s block times 
+    uint public constant saleDuration = 13*13337; // 13337 blocks assuming 13s block times
     uint internal nonce = 0;
     uint[TOKEN_LIMIT] internal indices;
- 
+
     constructor(address payable _beneficiary) {
         deployer = payable(msg.sender);
         beneficiary = _beneficiary;
@@ -71,8 +72,8 @@ contract InSecureumNFT {
             return ((saleDuration - elapsed) * price) / saleDuration;
         }
     }
-    
-    // SALE_LIMIT is 1337 
+
+    // SALE_LIMIT is 1337
     // Rest i.e. (TOKEN_LIMIT - SALE_LIMIT) are reserved for community distribution (not shown)
     function mint() external payable returns (uint) {
         require(publicSale, "Sale not started.");
@@ -107,47 +108,55 @@ contract InSecureumNFT {
 
 ---
 
-**[Q1] Missing zero-address check(s) in the contract**  
+**[Q1] Missing zero-address check(s) in the contract**
 
 (A): May allow anyone to start the sale  
 (B): May put the NFT sale proceeds at risk  
 (C): May burn the newly minted NFTs  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
-**[Q2] Given that lower indexed/numbered CryptoSAFU NFTs have rarer traits (and are considered more valuable as commented in `_mint`), the implementation of _InSecureumNFT_ is susceptible to the following exploits**  
+**[Q2] Given that lower indexed/numbered CryptoSAFU NFTs have rarer traits (and are considered more valuable as commented in `_mint`), the implementation of _InSecureumNFT_ is susceptible to the following exploits**
 
 (A): Buyers can repeatedly mint and revert until they receive desired NFT  
 (B): Buyers can generate addresses to mint until they receive desired NFT  
 (C): Miners can manipulate _block.timestamp_ to facilitate minting of desired NFT  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A,B,C**
+<details><summary><b>[Answers]</b></summary><b>
+A,B,C
+</b></details>
 
 ---
 
-**[Q3] The _getPrice()_ function**  
+**[Q3] The _getPrice()_ function**
 
 (A): Is expected to reduce the mint price over time after sale starts  
 (B): Allows free mints after ~13337 blocks from when _startSale()_ is called  
 (C): Visibility should be changed to _external_  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A,B**  
+<details><summary><b>[Answers]</b></summary><b>
+A,B
+</b></details>
 
 ---
 
-**[Q4] _InSecureumNFT_ contract is**  
+**[Q4] _InSecureumNFT_ contract is**
 
 (A): Not susceptible to reentrancy given the absence of external contract calls  
 (B): Not susceptible to integer overflow/wrapping given the compiler version used and the absence of unchecked blocks  
 (C): Susceptible to reentrancy during minting  
-(D): Perfectly safe for production  
+(D): Perfectly safe for production
 
-**[Answers]: B,C**
+<details><summary><b>[Answers]</b></summary><b>
+B,C
+</b></details>
 
 ---
 
@@ -156,41 +165,49 @@ contract InSecureumNFT {
 (A): Use of evident test configuration will cause fewer NFTs to be minted than expected in production  
 (B): Illustrates the lack of best-practice for test parameterization to be removed or kept separate from production code  
 (C): It will behave as documented in code to mint the expected number of NFTs in production  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A,B**
+<details><summary><b>[Answers]</b></summary><b>
+A,B
+</b></details>
 
 ---
 
-**[Q6] The function _startSale()_**  
+**[Q6] The function _startSale()_**
 
 (A): May be successfully called/executed by anyone  
 (B): May be successfully called/executed with `_price` of 0  
 (C): Must be called for minting to happen successfully  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A,B,C**  
+<details><summary><b>[Answers]</b></summary><b>
+A,B,C
+</b></details>
 
 ---
 
-**[Q7] The minting of NFTs**  
+**[Q7] The minting of NFTs**
 
 (A): Requires an exact amount of ETH to be paid by the buyer  
 (B): Refunds excess ETH paid by buyer back to the buyer  
 (C): Transfers the NFT _salePrice_ to the _beneficiary_ address  
-(D): May be optimized to prevent any zero ETH transfers in its refund mechanism  
+(D): May be optimized to prevent any zero ETH transfers in its refund mechanism
 
-**[Answers]: B,C,D**  
+<details><summary><b>[Answers]</b></summary><b>
+B,C,D
+</b></details>
 
 ---
 
-**[Q8] The NFT sale**  
+**[Q8] The NFT sale**
 
 (A): May be restarted by anyone any number of times  
 (B): Can be started exactly once by _deployer_  
 (C): Is missing an additional check on _publicSale_  
-(D): Is missing an event emit in _startSale_  
+(D): Is missing an event emit in _startSale_
 
-**[Answers]: A,C,D**
+<details><summary><b>[Answers]</b></summary><b>
+A,C,D
+</b></details>
 
 ---

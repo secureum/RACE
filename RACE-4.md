@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this quiz are based on the _InSecureum_ contract. This is the same contract you will see for all the 8 questions in this quiz. _InSecureum_ is adapted from a widely used ERC20 contract. The question is below the shown contract.
 
-```
+```solidity
 pragma solidity 0.8.10;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol";
@@ -131,9 +131,11 @@ function _transfer(
 (A): Atypical decimals value  
 (B): Non-standard _decreaseAllowance_ and _increaseAllowance_  
 (C): Non-standard _transfer_  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B**
+<details><summary><b>[Answers]</b></summary><b>
+A, B
+</b></details>
 
 ---
 
@@ -142,9 +144,11 @@ function _transfer(
 (A): `_decimals()` can have _pure_ state mutability instead of _view_  
 (B): `_burn()` can have _external_ visibility instead of _internal_  
 (C): `_mint()` should have _internal_ visibility instead of _external_  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -153,9 +157,11 @@ function _transfer(
 (A): Is susceptible to an integer underflow  
 (B): Has an incorrect allowance check  
 (C): Has an optimisation indicative of unlimited approvals  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -164,9 +170,11 @@ function _transfer(
 (A): _increaseAllowance_ is susceptible to an integer overflow  
 (B): _decreaseAllowance_ is susceptible to an integer overflow  
 (C): _decreaseAllowance_ does not allow reducing allowance to zero  
-(D): _decreaseAllowance_ can be optimised with `unchecked{}`  
+(D): _decreaseAllowance_ can be optimised with `unchecked{}`
 
-**[Answers]: C, D**
+<details><summary><b>[Answers]</b></summary><b>
+C, D
+</b></details>
 
 ---
 
@@ -175,9 +183,11 @@ function _transfer(
 (A): Is missing a zero-address validation  
 (B): Is susceptible to an integer overflow  
 (C): Is susceptible to an integer underflow  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -188,7 +198,9 @@ function _transfer(
 (C): Has an incorrect update of account balance  
 (D): None of the above
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -199,7 +211,9 @@ function _transfer(
 (C): Has an incorrect update of account balance  
 (D): None of the above
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
@@ -210,6 +224,8 @@ function _transfer(
 (C): Has an incorrect update of allowance  
 (D): None of the above
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---

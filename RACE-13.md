@@ -170,13 +170,15 @@ contract CallbackERC20 {
 
 ---
 
-**[Q1] In `transferFrom()`, `unchecked` is __not__ used in the allowance subtraction:**\
+**[Q1] In `transferFrom()`, `unchecked` is **not** used in the allowance subtraction:**\
 (A): To save gas\
 (B): To avoid unauthorized transfers\
 (C): To avoid reentrancy\
 (D): None of the above
 
- **[Answers]: B**
+ <details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
  
  ---
  
@@ -186,10 +188,11 @@ contract CallbackERC20 {
 (C): At all times\
 (D): At no times
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
-
 
 **[Q3] In `name()` and `symbol()`, the returned values are incorrect because:**\
 (A): The string encoding is too short\
@@ -197,25 +200,27 @@ contract CallbackERC20 {
 (C): `MSTORE` does not fill all bytes until 0x5f and function may return junk at the end\
 (D): The code always reverts
 
-
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
 **[Q4] To correct `name()`, one could make the following change(s):**\
-(A): ```assembly {
+(A): `assembly {
           mstore(0x20, 0x20)
           mstore(0x48, 0x0843616c6c6261636b)
           return(0x20, 0x60)
-       }```\
-(B): ```function name() external pure returns (string memory n) { n = "Callback"; }```\
-(C): ```return "Callback";```\
+       }`\
+(B): `function name() external pure returns (string memory n) { n = "Callback"; }`\
+(C): `return "Callback";`\
 (D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
-
 
 **[Q5] The concern(s) with the check in `notify()` is/are:**\
 (A): Selector 0x00000000 is the `fallback` function\
@@ -223,7 +228,9 @@ contract CallbackERC20 {
 (C): Selector 0x00000000 is possible in which case a valid callback would not be called\
 (D): Selector can never be 0x00000000, so the check is useless
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -233,7 +240,9 @@ contract CallbackERC20 {
 (C): One should always use `try/catch` in external calls\
 (D): The called contract may not have the called function selector thus falling through to `fallback` or reverting the transfer
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -243,10 +252,11 @@ contract CallbackERC20 {
 (C): Send Ether to the called contract\
 (D): Make the call in inline assembly
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
-
 
 **[Q8] How can the contract be exploited for loss-of-funds via notify callback reentrancy?**\
 (A): During the callback, while being the sender of a transfer, repeat the transfer\
@@ -254,6 +264,8 @@ contract CallbackERC20 {
 (C): During the callback, while being the recipient of a transfer, burn the received tokens\
 (D): This cannot happen in this contract
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---

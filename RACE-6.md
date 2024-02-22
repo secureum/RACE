@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this RACE are based on the _InSecureumLand_ contract. This is the same contract you will see for all the 8 questions in this RACE. _InSecureumLand_ is adapted from a well-known contract. The question is below the shown contract.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.10;
 
@@ -54,7 +54,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
    mapping(bytes32 => bool) public isRandomRequestForPublicSaleAndContributors;
    bool public publicSaleAndContributorsRandomnessRequested;
    bool public ownerClaimRandomnessRequested;
-   
+
    // constants
    uint256 immutable public MAX_LANDS;
    uint256 immutable public MAX_LANDS_WITH_FUTURE;
@@ -223,7 +223,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
        bool _isKycCheckRequired
    ) external onlyOperator {
        require(!publicSaleActive, "Public sale has already begun");
-       
+
        publicSalePriceLoweringDuration = _publicSalePriceLoweringDuration;
        publicSaleStartPrice = _publicSaleStartPrice;
        publicSaleEndingPrice = _publicSaleEndingPrice;
@@ -269,7 +269,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
        } else {
            require(msg.sender == tx.origin, "Minting from smart contracts is disallowed");
        }
-   
+
        uint256 mintPrice = getMintPrice();
        IERC20(tokenContract).safeTransferFrom(msg.sender, address(this), mintPrice * numLands);
        mintedPerAddress[msg.sender] += numLands;
@@ -313,14 +313,14 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
            uint256 alphaTokenId = alphaTokenIds[i];
            require(!alphaClaimed[alphaTokenId], "ALPHA NFT already claimed");
            require(ERC721(alphaContract).ownerOf(alphaTokenId) == msg.sender, "Must own all of the alpha defined by alphaTokenIds");
-           
-           alphaClaimLandByTokenId(alphaTokenId);    
+
+           alphaClaimLandByTokenId(alphaTokenId);
        }
    }
 
    function alphaClaimLandByTokenId(uint256 alphaTokenId) private {
        alphaClaimed[alphaTokenId] = true;
-       ++alphaClaimedAmount;        
+       ++alphaClaimedAmount;
        _safeMint(msg.sender, alphaTokenId);
    }
 
@@ -329,8 +329,8 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
            uint256 betaTokenId = betaTokenIds[i];
            require(!betaClaimed[betaTokenId], "BETA NFT already claimed");
            require(ERC721(betaContract).ownerOf(betaTokenId) == msg.sender, "Must own all of the beta defined by betaTokenIds");
-           
-           betaClaimLandByTokenId(betaTokenId);    
+
+           betaClaimLandByTokenId(betaTokenId);
        }
    }
 
@@ -391,7 +391,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
            uint256 toMint = maxAmount < leftToBeMinted + totalMinted ?
                            maxAmount :
                            leftToBeMinted + totalMinted; //summing totalMinted avoid to use another counter
-           
+
            uint256 lastAlphaNft = MAX_ALPHA_NFT_AMOUNT - 1;
            for(uint256 i; i <= lastAlphaNft && totalMinted < toMint; ++i) {
                if(!alphaClaimed[i]){
@@ -413,7 +413,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
            for(; mintIndexPublicSaleAndContributors < MAX_LANDS && totalMinted < toMint; ++mintIndexPublicSaleAndContributors) {
                    ++totalMinted;
                    _safeMint(recipient, mintIndexPublicSaleAndContributors);
-           }              
+           }
        }
    }
 
@@ -427,13 +427,13 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
    }
 
    function mintFutureLandsWithAmount(address recipient, uint256 maxAmount) public onlyFutureMinter {
-       require(maxAmount <= MAX_MINT_PER_BLOCK, "maxAmount cannot exceed MAX_MINT_PER_BLOCK");    
+       require(maxAmount <= MAX_MINT_PER_BLOCK, "maxAmount cannot exceed MAX_MINT_PER_BLOCK");
        require(futureLandsNftIdCurrent < MAX_LANDS_WITH_FUTURE, "All future lands were already minted");
        for(uint256 claimed; claimed < maxAmount && futureLandsNftIdCurrent < MAX_LANDS_WITH_FUTURE; ++claimed){
            _safeMint(recipient, futureLandsNftIdCurrent++);
        }
    }
-   
+
    // metadata
    function loadLandMetadata(Metadata memory _landMetadata)
        external onlyOperator checkMetadataRange(_landMetadata)
@@ -447,7 +447,7 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
        checkFirstMetadataRange(index, _landMetadata.startIndex, _landMetadata.endIndex)
    {
        metadataHashes[index] = _landMetadata;
-   }    
+   }
 
    // randomness
    function requestRandomnessForPublicSaleAndContributors() external onlyOperator returns (bytes32 requestId) {
@@ -492,9 +492,11 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): Single-step ownership change  
 (B): Incorrectly implemented KYC check using Merkle proofs  
 (C): Missing time-delayed change of critical parameters  
-(D): Accidentally sent Ether gets locked in contract  
+(D): Accidentally sent Ether gets locked in contract
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -503,9 +505,11 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): Missing zero-address validation  
 (B): Missing event emission  
 (C): Incorrect modifier  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B**
+<details><summary><b>[Answers]</b></summary><b>
+A, B
+</b></details>
 
 ---
 
@@ -514,9 +518,11 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): Minting could exceed max supply  
 (B): Minting could exceed `maxMintPerTx`  
 (C): Minting could exceed `maxMintPerAddress`  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
@@ -525,9 +531,11 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): `mintLands`  
 (B): `startPublicSale`  
 (C): `contributorsClaimLand`  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -536,9 +544,11 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): Anyone can call `startContributorsClaimPeriod`  
 (B): Anyone can call `stopContributorsClaimPeriod`  
 (C): Anyone can call `contributorsClaimLand`  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -547,9 +557,11 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): It depends on miner-influenceable `block.timestamp`  
 (B): It depends on miner-influenceable `blockhash`  
 (C): It depends on deprecated Chainlink VRF v1  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -558,9 +570,11 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): Stale comments  
 (B): Missing NatSpec  
 (C): Minimal inlined comments  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -569,8 +583,10 @@ contract InSecureumLand is ERC721Enumerable, Ownable, ReentrancyGuard, VRFConsum
 (A): Removing `nonReentrant` modifier if mint addresses are known to be EOA  
 (B): Using `_mint` instead of `_safeMint` if mint addresses are known to be EOA  
 (C): Using `unchecked` in for loop increments  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---

@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this RACE are based on the _InSecureumERC721_ contract. This is the same contract you will see for all the 8 questions in this RACE. _InSecureumERC721_ is adapted from a well-known contract. The question is below the shown contract.
 
-```
+```solidity
 pragma solidity >=0.8.0;
 
 abstract contract InSecureumERC721 {
@@ -195,9 +195,11 @@ abstract contract ERC721TokenReceiver {
 (A): NFT ownership is tracked by `_ownerOf`  
 (B): NFT balance is tracked by `_balanceOf`  
 (C): NFT approvals are tracked by `getApproved`  
-(D): NFT operator can transfer all of owner’s NFTs  
+(D): NFT operator can transfer all of owner’s NFTs
 
-**[Answers]: A, B, C, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C, D
+</b></details>
 
 ---
 
@@ -206,9 +208,11 @@ abstract contract ERC721TokenReceiver {
 (A): Owner  
 (B): Spender (Approved address)  
 (C): Operator  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -217,9 +221,11 @@ abstract contract ERC721TokenReceiver {
 (A): Prevent minting to zero address  
 (B): Prevent reminting of NFTs  
 (C): Transparency by emitting event  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -228,9 +234,11 @@ abstract contract ERC721TokenReceiver {
 (A): Anyone can arbitrarily burn NFTs  
 (B): Potential integer underflow because of unchecked  
 (C): Incorrect emission of event  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
@@ -239,9 +247,11 @@ abstract contract ERC721TokenReceiver {
 (A): Validating if the recipient is an EOA  
 (B): Ensuring that the recipient can only be an EOA  
 (C): Validating if the recipient is an ERC721 aware contract  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -250,9 +260,11 @@ abstract contract ERC721TokenReceiver {
 (A): Allows the NFT owner to approve a spender  
 (B): Allows the NFT spender to approve an operator  
 (C): Allows the NFT operator to approve a spender  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -261,9 +273,11 @@ abstract contract ERC721TokenReceiver {
 (A): Approves `msg.sender` to manage operator’s NFTs  
 (B): Gives everyone approval to manage `msg.sender`’s NFTs  
 (C): Revokes everyone’s approvals to manage `msg.sender`’s NFTs  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -272,8 +286,10 @@ abstract contract ERC721TokenReceiver {
 (A): Allowing the `msg.sender` to transfer any NFT  
 (B): NFTs potentially stuck in recipient contracts  
 (C): Potential integer underflow  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---

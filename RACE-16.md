@@ -1,5 +1,6 @@
 **Note:** All 8 questions in this RACE are based on the below contract. This is the same contract you will see for all the 8 questions in this RACE. The question is below the shown contract.
-```
+
+```solidity
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
@@ -79,14 +80,18 @@ contract FlashLoan is IERC3156FlashLender {
    }
 }
 ```
+
 ---
+
 **[Q1] Which of the following is an explanation of why `flashLoan()` could revert?** \
 (A): The transaction reverts because a user requested to borrow more than `maxFlashLoan()` \
 (B): The transaction reverts because the receiver’s `onFlashLoan()` did not return `CALLBACK_SUCCESS` \
 (C): The transaction reverts because the user returned more than `retAmt` funds \
 (D): The transaction reverts because a user tried to spend more funds than their allowance in `onFlashLoan()`
 
-**[Answers]: A, B, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, D
+</b></details>
 
 ---
 
@@ -96,7 +101,9 @@ contract FlashLoan is IERC3156FlashLender {
 (C): t.balanceOf(address(this)) > old(t.balanceOf(address(this))) \
 (D): t.balanceOf(address(this)) == old(t.balanceOf(address(this))) + fee
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
@@ -104,19 +111,23 @@ contract FlashLoan is IERC3156FlashLender {
 (A): ERC223 \
 (b): ERC677 \
 (B): ERC777 \
-(C): ERC1155 
-    
-**[Answers]:  C**
+(C): ERC1155
+
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
-**[Q4] Which external call made by `flashLoan()` could result in theft if the token(s) identified in the previous question  were to be used?** \
+**[Q4] Which external call made by `flashLoan()` could result in theft if the token(s) identified in the previous question were to be used?** \
 (A): `onFlashLoan()` \
 (B): `balanceOf()` \
 (C): `transferFrom()` \
-(D): `approve()` 
+(D): `approve()`
 
-**[Answers]:  C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -126,7 +137,9 @@ contract FlashLoan is IERC3156FlashLender {
 (C): To pay those who staked their funds to be flashloaned \
 (D): It has no purpose
 
-**[Answers]:  A** 
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
@@ -136,7 +149,9 @@ contract FlashLoan is IERC3156FlashLender {
 (C): Constant \
 (D): None of the above
 
-**[Answers]:  B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
 
@@ -146,7 +161,9 @@ contract FlashLoan is IERC3156FlashLender {
 (C): The `FlashLoan` contract's balance of token t will STAY THE SAME \
 (D): None of the above
 
-**[Answers]:  D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -156,6 +173,8 @@ contract FlashLoan is IERC3156FlashLender {
 (C): The sum of all flashloans granted by the `FlashLoan` contract is less than the `maxFlashLoan` amount \
 (D): The token balance of any contract/user other than the `FlashLoan` contract, the caller of the `flashLoan()`, and the “receiver” contract will remain the same as before the call to `flashLoan()`
 
-**[Answers]:  B**  
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---

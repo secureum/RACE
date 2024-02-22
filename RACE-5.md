@@ -1,6 +1,6 @@
 **Note**: All 8 questions in this quiz are based on the _InSecureum_ contract. This is the same contract you will see for all the 8 questions in this quiz. _InSecureum_ is adapted from a well-known contract. The question is below the shown contract.
 
-```
+```solidity
 pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/IERC1155.sol";
@@ -190,7 +190,7 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
         _operatorApprovals[owner][operator] = approved;
         emit ApprovalForAll(owner, operator, approved);
     }
- 
+
     function _doSafeTransferAcceptanceCheck(
         address operator,
         address from,
@@ -248,9 +248,11 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): May be optimised by caching state variable in local variable  
 (B): May be optimised by changing state mutability from _view_ to _pure_  
 (C): May be optimised by changing its visibility to _external_  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -259,9 +261,11 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): _balanceOfBatch()_  
 (B): `_safeBatchTransferFrom()`  
 (C): `_mintBatch()`  
-(D): `_burnBatch()`  
+(D): `_burnBatch()`
 
-**[Answers]: A, B, C, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C, D
+</b></details>
 
 ---
 
@@ -270,9 +274,11 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): Incorrect visibility  
 (B): Susceptibility to an integer underflow  
 (C): Missing zero-address validation  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -281,9 +287,11 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): Missing array lengths mismatch check  
 (B): Susceptibility to an integer underflow  
 (C): Incorrect balance update  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
@@ -292,9 +300,11 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): Missing array lengths mismatch check  
 (B): Incorrect event emission  
 (C): Allows burning of tokens  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: A, B, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, B, C
+</b></details>
 
 ---
 
@@ -303,9 +313,11 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): Missing zero-address validation  
 (B): Susceptibility to an integer underflow  
 (C): Incorrect balance update  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: D**
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -314,9 +326,11 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): _isContract_ check on incorrect address  
 (B): Incorrect check on return value  
 (C): Call to incorrect _isContract_ implementation  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
@@ -325,8 +339,10 @@ contract InSecureum is Context, ERC165, IERC1155, IERC1155MetadataURI {
 (A): Incorrect visibility  
 (B): Incorrect operator in the comparison  
 (C): Unnecessary because Ethereum only has Contract accounts  
-(D): None of the above  
+(D): None of the above
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---

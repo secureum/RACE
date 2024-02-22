@@ -1,5 +1,6 @@
 **Note**: All 8 questions in this RACE are based on the below contract. This is the same contract you will see for all the 8 questions in this RACE. The question is below the shown contract.
-```
+
+```solidity
 pragma solidity 0.8.20;
 
 import {ERC721Burnable} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
@@ -26,7 +27,7 @@ contract WalletFactory {
            addr := create2(0, add(code, 0x20), mload(code), salt)
        }
     }
-}  
+}
 
 
 contract Wallet {
@@ -87,76 +88,101 @@ contract Wallet {
    }
 }
 ```
+
 ---
+
 **[Q1] The deployment concern(s) here for different EVM-compatible chains is/are:** \
 (A): `receive` method behavior might be undefined \
 (B): The presence of `ecrecover` precompile is potentially dangerous \
 (C): Not all opcodes in the bytecode are guaranteed to be supported \
-(D): None of the above 
+(D): None of the above
 
-**[Answers]: C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
+
 **[Q2] The security concern(s) in `WalletFactory` is/are:** \
 (A): ETH funds may get stuck in it forever \
 (B): The `deploy` method is not marked as `payable` \
 (C): No access control on wallet deployment \
-(D): Deployment may silently fail 
+(D): Deployment may silently fail
 
-**[Answers]: A, D**
+<details><summary><b>[Answers]</b></summary><b>
+A, D
+</b></details>
 
 ---
+
 **[Q3] Design flaw(s) of `Wallet` is/are:** \
 (A): Missing wallet owner role and appropriate access control \
 (B): Inability to rescue stuck tokens \
 (C): Assembly usage is unsafe for the Yul IR pipeline \
 (D): Calling a `payable` method in a for-loop
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
+
 **[Q4] The security concern(s) with hashing of `transaction` parameter in `execute` is/are:** \
 (A): Cross-contract replay attacks \
 (B): Cross-chain replay attacks \
 (C): `keccak256` hash collision attacks \
 (D): Reentrancy attacks
 
-**[Answers]: B**
+<details><summary><b>[Answers]</b></summary><b>
+B
+</b></details>
 
 ---
+
 **[Q5] If the hashed payload in `execute` were to exclude a nonce, the security concern(s) with `ecrecover` would be:** \
 (A): Signature malleability by flipping the “s” or “v” values \
 (B): Signature malleability by using compact signatures \
 (C): Signature malleability by hash collisions \
 (D): Forcefully reverting transactions
 
-**[Answers]: A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
+
 **[Q6] The security concern(s) with `Wallet` is/are:** \
 (A): Ether sent to the contract will be stuck forever \
 (B): Anyone can execute arbitrary calls \
 (C): Anyone can steal the contract ETH balance \
 (D): None of the above
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
+
 **[Q7] The nonce best practice(s) _not_ followed correctly is/are:** \
 (A): Nonce is not incremented before the low-level call \
 (B): Nonce is not guaranteed to be included in the signature \
 (C): Nonce is not incremented correctly on transaction execution \
 (D): None of the above
 
-**[Answers]: A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
+
 **[Q8] The security concern(s) with `Wallet` contract related to ERC721 tokens is/are:** \
 (A): There is no way to get ERC721 tokens out of the contract \
 (B): Failure to receive ERC721 tokens depending on the transfer method \
 (C): Failure to receive any ERC721 tokens \
 (D): Unauthorized burning of ERC721 tokens
 
-**[Answers]: B, D**
+<details><summary><b>[Answers]</b></summary><b>
+B, D
+</b></details>
 
 ---

@@ -1,5 +1,6 @@
 **Note:** All 8 questions in this RACE are based on the below contract. This is the same contract you will see for all the 8 questions in this RACE. The question is below the shown contract.
-```
+
+```solidity
 // SPDX-License-Identifier: agpl-3.0
 pragma solidity ^0.8.0;
 
@@ -15,10 +16,10 @@ contract SimpleDEX {
    uint256 public immutable fees_percentage = 10;
 
    modifier nonReentrant(){
-     // Logic needs to be implemented    
-       _; 
+     // Logic needs to be implemented
+       _;
    }
-  
+
    modifier onlyOwner(){
        require(tx.origin == owner, "Only owner permitted");
        _;
@@ -54,7 +55,7 @@ contract SimpleDEX {
    function claimFees() public onlyOwner {
        bool token_success =  token.transfer(msg.sender, fees);
        require(token_success, "couldn't transfer tokens");
-       token_balance -= uint64(fees); 
+       token_balance -= uint64(fees);
        fees = 0;
    }
 
@@ -69,7 +70,7 @@ contract SimpleDEX {
        (bool success, ) = msg.sender.call{value: amount}("");
        require(success, "Failed to transfer Eth");
        token_balance += uint64(token_amount);
-       fees += ratio * fee; 
+       fees += ratio * fee;
    }
 
    fallback() payable external {
@@ -88,47 +89,58 @@ contract SimpleDexProxy {
 
 
 contract Seller {
-        // Sells tokens to the msg.sender in exchange for eth, according to SimpleDex's getEthPrice() 
+        // Sells tokens to the msg.sender in exchange for eth, according to SimpleDex's getEthPrice()
         function buyToken(SimpleDEX simpleDexAddr) external  payable {
             uint ratio = simpleDexAddr.getEthPrice();
-            IERC20 token = simpleDexAddr.token(); 
-            uint256 token_amount = msg.value * ratio; 
+            IERC20 token = simpleDexAddr.token();
+            uint256 token_amount = msg.value * ratio;
             token.transfer(msg.sender, token_amount);
         }
 }
 ```
+
 ---
+
 **[Q1] What is/are the correct implementation(s) of the `nonReentrant()` modifier?** \
-(A): 
-```
+(A):
+
+```solidity
        require (reentrancy_lock == 1);
        reentrancy_lock = 0;
         _;
        reentrancy_lock = 1;
 ```
-(B): 
-```
-       require (reentrancy_lock == 0); 
+
+(B):
+
+```solidity
+       require (reentrancy_lock == 0);
        reentrancy_lock = 1;
         _;
        reentrancy_lock = 0;
 ```
-(C): 
-```
-       require (reentrancy_lock == 1); 
+
+(C):
+
+```solidity
+       require (reentrancy_lock == 1);
        reentrancy_lock = 1;
         _;
        reentrancy_lock = 0;
 ```
-(D): 
-```
-       require (reentrancy_lock == 0); 
+
+(D):
+
+```solidity
+       require (reentrancy_lock == 0);
        reentrancy_lock = 2;
        _;
        reentrancy_lock = 0;
 ```
 
-**[Answers]: B, D**
+<details><summary><b>[Answers]</b></summary><b>
+B, D
+</b></details>
 
 ---
 
@@ -136,31 +148,37 @@ contract Seller {
 (A): Only the owner, due to `onlyOwner` modifier \
 (B): The owner \
 (C): Anyone who can trick owner into signing an arbitrary transaction \
-(D): No one 
+(D): No one
 
-**[Answers]: B, C**
+<details><summary><b>[Answers]</b></summary><b>
+B, C
+</b></details>
 
 ---
 
 **[Q3] In `buyEth()`, we put an `unchecked` block on “`current_eth -= amount`”:** \
 (A): Because `current_eth` is `uint` \
 (B): Because the compiler is protecting us from overflows \
-(C): Only if we add a prior check:	\
-    `require(current_eth > amount);` \
+(C): Only if we add a prior check: \
+ `require(current_eth > amount);` \
 (D): Only if we add a prior check: \
-    `require(current_eth >= amount);` 
-    
-**[Answers]:  D**
+ `require(current_eth >= amount);`
+
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
 **[Q4] In `buyEth()`, are there any reentrancy concerns assuming the `nonReentrant` modifier is implemented correctly?** \
 (A): No, because it has the `nonReentrant` modifier \
-(B): No, and even without the modifier you can't exploit any issue  \
+(B): No, and even without the modifier you can't exploit any issue \
 (C): Yes, there is a cross-contract reentrancy concern via `Seller` \
-(D): None of the above 
+(D): None of the above
 
-**[Answers]:  C**
+<details><summary><b>[Answers]</b></summary><b>
+C
+</b></details>
 
 ---
 
@@ -170,7 +188,9 @@ contract Seller {
 (C): `buyEth()` will be called but ETH won't be transferred \
 (D): Transaction will be reverted
 
-**[Answers]:  D** 
+<details><summary><b>[Answers]</b></summary><b>
+D
+</b></details>
 
 ---
 
@@ -180,26 +200,32 @@ contract Seller {
 (C): If `token_amount` is > `MAX_UINT64`, it will result in a casting issue \
 (D): None of the above
 
-**[Answers]:  A, C**
+<details><summary><b>[Answers]</b></summary><b>
+A, C
+</b></details>
 
 ---
 
 **[Q7] Can `getEthPrice()` return zero?** \
 (A): Yes, if the owner initializes the contract with more ETH than `token_balance` \
-(B)  Yes, a carefully crafted `buyEth()` transaction can result in `getEthPrice()` returning zero \
+(B) Yes, a carefully crafted `buyEth()` transaction can result in `getEthPrice()` returning zero \
 (C): Yes, once all the ETH are sold \
 (D): No, there is no issue
 
-**[Answers]:  A**
+<details><summary><b>[Answers]</b></summary><b>
+A
+</b></details>
 
 ---
 
 **[Q8] Which of the following invariants (written in propositional logic) hold on a correct implementation of the code?** \
 (A): `this.balance == current_eth` <=> `token.balanceOf(this) == token_balance` \
 (B): `this.balance >= current_eth` && `token.balanceOf(this) >= token_balance` \
-(C): `this.balance <= token.balanceOf(this)` &&  `token.balanceOf(this) <= token_balance` \
+(C): `this.balance <= token.balanceOf(this)` && `token.balanceOf(this) <= token_balance` \
 (D): `this.balance >= current_eth` || `token.balanceOf(this)  >= token_balance`
 
-**[Answers]:  B, D**  
+<details><summary><b>[Answers]</b></summary><b>
+B, D
+</b></details>
 
 ---
